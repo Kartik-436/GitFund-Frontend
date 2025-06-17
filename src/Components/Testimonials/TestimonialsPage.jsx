@@ -6,7 +6,7 @@ import DotGrid from '../WhyChoose/DotGridBackground';
 
 function InfiniteMovingCardsDemo() {
     return (
-        <div className="h-[28rem] rounded-md flex flex-col antialiased bg-white dark:bg-[#09090b] dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
+        <div className="min-h-[28rem] rounded-md flex flex-col antialiased bg-white dark:bg-[#09090b] dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
             <InfiniteMovingCards
                 items={testimonials}
                 direction="right"
@@ -52,7 +52,7 @@ const TestimonialsPage = () => {
         <div className='bg-[#09090b] w-full min-h-[120vh] py-20 overflow-hidden relative'>
             <div className='flex flex-col mt-18 md:mt-[20vh] gap-12 md:gap-16 z-50 md:z-10'>
                 <div className='text-white w-full text-center flex flex-col items-center gap-3 z-10 pointer-events-none'>
-                    <h1 className='text-white text-3xl md:text-6xl font-bold max-w-[80vw] md:max-w-[60vw] text-center'>
+                    <h1 className='text-white text-3xl md:text-7xl font-bold max-w-[80vw] md:max-w-[75vw] text-center'>
                         Loved by business and developers across the planet
                     </h1>
                     <p className='text-neutral-400 text-sm md:text-md font-semibold'>

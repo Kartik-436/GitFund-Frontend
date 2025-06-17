@@ -30,7 +30,7 @@ const LastPortal = () => {
         });
 
         tl.to(MaskRef.current, {
-            maskSize: "1800px",
+            maskSize: "2600px",
             ease: "power3.inOut"
         });
 

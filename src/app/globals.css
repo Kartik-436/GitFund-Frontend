@@ -56,11 +56,9 @@
     .mask2 {
         mask-image: url('/MaskImage.svg');
         mask-repeat: no-repeat;
-        mask-position: 50% 46%;
+        mask-position: 50% 30%;
         background: black;
-        mask-border: #fff;
-        mask-border-width: 5px;
-        mask-border-outset: 10px;
+        mask-origin: fill-box;
         mask-size: 200px;
     }
 }
