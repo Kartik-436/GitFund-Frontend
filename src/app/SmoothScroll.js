@@ -11,14 +11,14 @@ gsap.registerPlugin(ScrollTrigger)
 export default function SmoothScroll({ children }) {
     useEffect(() => {
         const lenis = new Lenis({
-            duration: 1.8,
+            duration: 2, // slightly faster but still smooth
             easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
             direction: 'vertical',
             gestureDirection: 'vertical',
             smooth: true,
             smoothTouch: true,
-            touchMultiplier: 2,
-        })
+            touchMultiplier: 2.5, // makes it feel lighter on touch
+        });
 
         function raf(time) {
             lenis.raf(time)

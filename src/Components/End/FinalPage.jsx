@@ -1,33 +1,68 @@
-import React, { useEffect, useRef } from 'react'
-import DotGrid from '../WhyChoose/DotGridBackground'
+'use client';
+import React, { useEffect, useRef } from 'react';
+import DotGrid from '../WhyChoose/DotGridBackground';
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { motion } from 'framer-motion';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const FinalPage = () => {
     const ballRefs = useRef([]);
+    const textRef = useRef(null);
 
     useEffect(() => {
+        // Floating balls animation
         ballRefs.current.forEach((ball) => {
             floatBall(ball);
         });
+
+        // Word-by-word color scroll animation
+        const words = gsap.utils.toArray('.scroll-word');
+        gsap.set(words, { color: '#dbcaab' });
+
+        let tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: textRef.current,
+                start: 'top top',
+                end: `bottom 30%`, // Enough space for word-by-word
+                scrub: 1,
+                pin: true,
+            },
+        });
+
+        words.forEach((word, i) => {
+            tl.to(word, {
+                color: '#09090b',
+                duration: 0.3,
+                ease: 'power1.in',
+            }, i * 0.15);
+        });
+
+        return () => {
+            ScrollTrigger.getAll().forEach(t => t.kill());
+        };
     }, []);
 
     const floatBall = (ball) => {
         const duration = gsap.utils.random(1, 3, 0.1);
         const deltaX = gsap.utils.random(-40, 40);
         const deltaY = gsap.utils.random(-40, 40);
-
         gsap.to(ball, {
             x: deltaX,
             y: deltaY,
-            duration: duration,
+            duration,
             ease: 'sine.inOut',
             yoyo: true,
             repeat: -1,
         });
     };
 
+    const paragraph = "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus maiores praesentium ad!";
+
     return (
-        <div className='min-h-[200vh] w-full bg-[#F0EBE3] z-10 overflow-hidden relative'>
+        <div className='min-h-[300vh] w-full bg-[#F0EBE3] z-10 overflow-hidden relative'>
+            {/** Floating Balls */}
             <div ref={(el) => (ballRefs.current[0] = el)}
                 className={'h-35 w-35 bg-white shadow-xl absolute z-50 rounded-full flex items-center justify-center top-[130vh] left-[80%]'}
             >
@@ -56,10 +91,23 @@ const FinalPage = () => {
                 <div className="bg-[#ffffffc5] h-10 w-10 rounded-full blur-md absolute"></div>
             </div>
 
-            <h1 className='text-[5.6vw] max-w-[60vw] mt-[70vh] leading-20 z-50 text-[#dbcaab] text-center font-bold mx-auto py-35'>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus maiores praesentium ad!
-            </h1>
+            {/** Animated Gradient Text */}
+            <div
+                ref={textRef}
+                className='text-[5.6vw] max-w-[60vw] mt-[40vh] leading-[1.2] text-center font-bold mx-auto py-[10vh]'
+            >
+                {paragraph.split(' ').map((word, i) => (
+                    <motion.span
+                        key={i}
+                        className="scroll-word inline-block mr-[0.5vw]"
+                        initial={{ color: '#dbcaab' }}
+                    >
+                        {word}
+                    </motion.span>
+                ))}
+            </div>
 
+            {/** Background DotGrid */}
             <div className='w-full h-full inset-0 absolute z-0'>
                 <DotGrid
                     dotSize={2.5}
@@ -74,7 +122,7 @@ const FinalPage = () => {
                 />
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default FinalPage
+export default FinalPage;
