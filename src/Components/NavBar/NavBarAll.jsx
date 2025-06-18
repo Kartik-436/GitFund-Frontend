@@ -61,10 +61,10 @@ const NavBarAll = () => {
     }, []);
 
     const navItems = [
-        { text: 'Bounties', id: 'bounties' },
         { text: 'How it Works', id: 'how-it-works' },
+        { text: 'Bounties', id: 'bounties' },
         { text: 'Customers', id: 'customers' },
-        { text: 'Dashboard', id: 'dashboard' }
+        { text: 'Dashboard', id: 'dashboard' },
     ];
 
     return (
@@ -88,7 +88,7 @@ const NavBarAll = () => {
 
                 <div className='absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]'>
                     <div
-                        className="relative min-w-[30vw] px-3 scale-0 lg:scale-100 h-[9vh] flex items-center justify-center text-white rounded-full border-[1.2px] border-[#ffffff88] gap-10 cursor-pointer z-[1] bg-[#09090b50] overflow-hidden"
+                        className="relative min-w-[30vw] px-2 scale-0 lg:scale-100 h-[9vh] flex items-center justify-center text-white rounded-full border-[1.2px] border-[#ffffff88] gap-10 cursor-pointer z-[1] bg-[#09090b50] overflow-hidden"
                         id="NavBar"
                         onMouseLeave={handleMouseLeave}
                     >
