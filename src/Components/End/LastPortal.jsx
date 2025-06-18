@@ -25,14 +25,14 @@ const LastPortal = () => {
         });
 
         tl.to(MaskRef.current, {
-            maskSize: "700px",
+            maskSize: "1700px",
             ease: "power3.inOut"
         });
 
-        tl.to(MaskRef.current, {
-            maskSize: "2600px",
-            ease: "power3.inOut"
-        });
+        // tl.to(MaskRef.current, {
+        //     maskSize: "2600px",
+        //     ease: "power3.inOut"
+        // });
 
         return () => {
             ScrollTrigger.getAll().forEach(trigger => trigger.kill());

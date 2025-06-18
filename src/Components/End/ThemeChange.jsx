@@ -143,7 +143,7 @@ const ThemeChange = () => {
     };
 
     return (
-        <div className='bg-[#F0EBE3] w-full min-h-[200vh] overflow-hidden relative'>
+        <div className='bg-[#F0EBE3] w-full min-h-[169vh] overflow-x-hidden z-10 overflow-y-visible relative'>
 
             <div ref={(el) => (ballRefs.current[0] = el)}
                 className={'h-30 w-30 bg-white shadow-xl absolute z-50 rounded-full flex items-center justify-center top-[140vh] left-[80%]'}
@@ -179,7 +179,7 @@ const ThemeChange = () => {
                 <DotGrid
                     dotSize={2.5}
                     gap={26}
-                    baseColor="#00000050"
+                    baseColor="#eea21580"
                     activeColor="#9D00FF"
                     proximity={150}
                     shockRadius={300}
