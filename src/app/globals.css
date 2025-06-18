@@ -37,10 +37,9 @@
     .mask {
         mask-image: url('/MaskImage.svg');
         mask-repeat: no-repeat;
-        mask-position: 50% 30%;
+        mask-position: 50% 40%;
         background: #000;
-        mask-border: #fff;
-        mask-border-width: 2px;
+        mask-size: 0;
     }
 }
 
