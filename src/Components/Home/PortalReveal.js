@@ -17,49 +17,95 @@ const MaskedPage = () => {
     const Sphere = useRef(null);
     const contentRef = useRef(null);
     const particlesRef = useRef(null);
+    const Textref1 = useRef(null);
+    const Textref2 = useRef(null);
 
     useEffect(() => {
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: containerRef.current,
                 start: 'top top',
-                end: '+=500', // adjust based on how much scroll you want
+                end: '+=1200', // adjust based on how much scroll you want
                 scrub: 1,
                 pin: true,
             },
         });
 
-        // tl.to(Sphere.current, {
-        //     y: -20,
-        //     scaleY: 1.2,
-        //     scale: 0.9,
-        //     z: 100,
-        //     zIndex: 55,
-        //     duration: 0.2,
-        // }, "l")
+        tl.to(Sphere.current, {
+            y: -100,
+            x: -200,
+            rotate: 90,
+            scale: 1.2,
+            z: 100,
+            zIndex: 55,
+            duration: 0.2,
+        }, "0")
 
-        tl.to(MaskRef.current, {
-            maskSize: "1px",
-            ease: "power1.inOut",
-        }, "l")
+        tl.to(contentRef.current, {
+            y: -500,
+            rotateX: -50,
+        }, "0")
 
         tl.to(Sphere.current, {
-            scale: 2.3,
-            ease: "power1.inOut",
-            opacity: 0
-        }, "l2")
+            y: -50,
+            x: 170,
+            rotate: -90,
+            scale: 0.8,
+            z: 100,
+            zIndex: 55,
+            duration: 0.5,
+        }, "0.6")
 
-        tl.to(containerRef2.current, {
-            opacity: 0,
-            scale: 1.4,
-            ease: "power1.inOut",
-        }, "l2")
+        tl.to(Textref1.current, {
+            opacity: 0
+        }, "0.5")
+
+        tl.to(Textref2.current, {
+            opacity: 0
+        }, "1.2")
+
+        tl.fromTo(Textref2.current,
+            {
+                opacity: 0,
+                x: -50
+            }, {
+            opacity: 1,
+            x: 0
+        }, "0.5")
+
+        tl.fromTo(Textref1.current,
+            {
+                opacity: 0,
+                x: 50
+            }, {
+            opacity: 1,
+            x: 0
+        }, "0.1")
+
+        tl.to(Sphere.current, {
+            y: 60,
+            x: 0,
+            rotate: 0,
+            scale: 0.2,
+            z: 100,
+            zIndex: 55,
+        }, "1.2")
 
         tl.to(MaskRef.current, {
             maskSize: "2000px",
             duration: 1,
             ease: "power1.inOut",
         }, "l2")
+
+        tl.to(Sphere.current, {
+            scale: 3,
+            y: -250,
+            opacity: 0,
+        }, "l2")
+
+        // tl.to(containerRef2.current, {
+        //     opacity: 0,
+        // }, "l2")
 
         return () => {
             ScrollTrigger.getAll().forEach(trigger => trigger.kill());
@@ -84,10 +130,10 @@ const MaskedPage = () => {
                             <div className="absolute top-[48%] w-[1020px] h-[1020px] rounded-full bg-[#A78BFA]" />
                             <div className="absolute top-[48%] w-[1010px] h-[1000px] rounded-full z-50 bg-transparent border-8 border-[#A78BFA]/50 blur-[1px]" />
                             <div className='absolute top-[84%] w-[1300px] h-[800px] rounded-full bg-black z-20 blur-[100px]'></div>
-                            <div className='absolute bg-[#4f46e5]/60 h-20 w-80 z-50 bottom-33 blur-[80px]'></div>
-                            <div className='h-[25vh] rounded-full w-[66vw] bottom-60 absolute bg-[#4f46e5]/40 blur-[110px] pointer-events-none'></div>
-                            <div className='h-[30vh] rounded-full w-[50vw] bottom-30 left-50 absolute bg-[#4f46e5]/40 blur-[110px] pointer-events-none'></div>
                         </div>
+                        <div className='absolute bg-[#4f46e5]/60 h-20 w-80 z-50 bottom-33 blur-[80px]'></div>
+                        <div className='h-[25vh] rounded-full w-[66vw] bottom-60 absolute bg-[#4f46e5]/40 blur-[110px] pointer-events-none'></div>
+                        <div className='h-[30vh] rounded-full w-[50vw] bottom-30 left-50 absolute bg-[#4f46e5]/40 blur-[110px] pointer-events-none'></div>
 
                         <div className='bg-gradient-to-b from-0% via-black/50 to-black/100 h-[40vh] w-full absolute bottom-0 z-50 pointer-events-none'></div>
                         <div className='bg-black blur-[35px] absolute bottom-80 w-56 h-8 z-50 pointer-events-none'></div>
@@ -106,6 +152,16 @@ const MaskedPage = () => {
                                 alphaParticles={false}
                                 disableRotation={false}
                             />
+                        </div>
+
+                        <div ref={Textref1} className='text-white text-7xl absolute left-[52vw] max-w-[40vw] z-50 top-50 opacity-0'>
+                            <h1>lorem</h1>
+                            <p className='text-lg text-white'>lorem20</p>
+                        </div>
+
+                        <div ref={Textref2} className='text-white text-7xl absolute left-[12vw] max-w-[40vw] z-50 top-50 opacity-0'>
+                            <h1>lorem</h1>
+                            <p className='text-lg text-white'>lorem20</p>
                         </div>
 
                         <div ref={contentRef} className="flex flex-col gap-5 text-white absolute top-54 md:top-35 z-50 items-center justify-center pointer-events-none">

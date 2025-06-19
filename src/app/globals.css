@@ -37,7 +37,7 @@
     .mask {
         mask-image: url('/MaskImage2.svg');
         mask-repeat: no-repeat;
-        mask-position: 50% 40%;
+        mask-position: 50% 44.5%;
         background: #000;
         mask-size: 0;
     }
