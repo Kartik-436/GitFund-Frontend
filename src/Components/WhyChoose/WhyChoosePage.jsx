@@ -298,7 +298,7 @@ const WhyChoosePage = () => {
     }, [])
 
     return (
-        <div className='w-full h-[400vh] relative items-center justify-center m-0 p-0 flex'>
+        <div id='how-it-works' className='w-full h-[400vh] relative items-center justify-center m-0 p-0 flex'>
 
             <PurpleSphere
                 sphereRef={Sphere}

@@ -9,12 +9,12 @@ import LastPortal from './../Components/End/LastPortal';
 import FinalPage from "@/Components/End/FinalPage";
 import NavBarAll from './../Components/NavBar/NavBarAll';
 import BountiesSection from './../Components/Bounties/BountiesSection';
+import Footer from './../Components/Footer/Footer';
 
 export default function Home() {
   return (
     <SmoothScroll>
-      <div className="bg-[#09090b] w-full min-h-screen overflow-hidden relative">
-        {/* <NavbarDemo /> */}
+      <div id="CompleteHomePage" className="bg-[#09090b] w-full min-h-screen overflow-hidden relative no-visible-scrollbar">
         <NavBarAll />
         <MaskedPage />
         <BountiesSection />
@@ -23,6 +23,7 @@ export default function Home() {
         <TestimonialsPage />
         <LastPortal />
         <FinalPage />
+        <Footer />
       </div>
     </SmoothScroll>
   )

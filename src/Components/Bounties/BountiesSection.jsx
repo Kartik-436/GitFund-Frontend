@@ -32,7 +32,7 @@ const BountiesSection = () => {
     ];
 
     return (
-        <div className='min-h-[150vh] h-full relative flex items-center py-[20vh] pb-[40vh] justify-center'>
+        <div id='bounties' className='min-h-[150vh] h-full relative flex items-center py-[20vh] pb-[40vh] justify-center'>
             <div className='z-50 flex flex-col items-center w-full gap-[35vh]'>
                 <div className='flex flex-col gap-3 w-full items-start px-[10vw]'>
                     <h1 className='text-[8vw] font-bold leading-0 text-shadow-white text-white'>
