@@ -11,6 +11,9 @@ const FinalPage = () => {
     const ballRefs = useRef([]);
     const textRef = useRef(null);
 
+    const Notiref1 = useRef(null)
+    const Notiref2 = useRef(null)
+
     useEffect(() => {
         // Floating balls animation
         ballRefs.current.forEach((ball) => {
@@ -43,6 +46,19 @@ const FinalPage = () => {
             ScrollTrigger.getAll().forEach(t => t.kill());
         };
     }, []);
+
+    useEffect(() => {
+        gsap.to(Notiref2.current, {
+            y: 40,
+            scrollTrigger: {
+                trigger: Notiref1.current,
+                start: "start 60%",
+                end: "50% 65%",
+                scrub: 1,
+            }
+        })
+    }, [])
+
 
     const floatBall = (ball) => {
         const duration = gsap.utils.random(1, 3, 0.1);
@@ -105,6 +121,26 @@ const FinalPage = () => {
                         {word}
                     </motion.span>
                 ))}
+            </div>
+
+            <div className='w-full flex items-center justify-center mt-[20vh] z-50'>
+                <div ref={Notiref1} className='bg-[#F0EBE3] h-[60vh] w-[80vw] flex items-start justify-center rounded-full border-2 border-[#dbcaab]'>
+                    <div ref={Notiref2} className='bg-[#09090b] h-[54vh] w-[80vw] rounded-full z-50'>
+                        <div className='w-full h-full inset-0 absolute z-0'>
+                            <DotGrid
+                                dotSize={2.5}
+                                gap={26}
+                                baseColor="#ffffff50"
+                                activeColor="#9D00FF"
+                                proximity={150}
+                                shockRadius={300}
+                                shockStrength={7}
+                                resistance={800}
+                                returnDuration={1.5}
+                            />
+                        </div>
+                    </div>
+                </div>
             </div>
 
             {/** Background DotGrid */}

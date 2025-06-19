@@ -98,8 +98,8 @@ const MaskedPage = () => {
         }, "l2")
 
         tl.to(Sphere.current, {
-            scale: 3,
-            y: -250,
+            scale: 2,
+            y: -300,
             opacity: 0,
         }, "l2")
 
