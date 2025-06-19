@@ -49,7 +49,7 @@ const BountiesSection = () => {
             </div>
 
             <div className='absolute top-[37vh] left-[16.2vw] rotate-90'>
-                <Image src={"/arrow.png"} height={90} width={120} />
+                <Image src={"/arrow.png"} height={90} width={120} alt='Arrow Image' />
             </div>
 
             <div className='absolute top-[46vh] right-[11vw] rotate-12'>
@@ -57,7 +57,7 @@ const BountiesSection = () => {
             </div>
 
             <div className='absolute top-[55.5vh] right-[6.5vw] rotate-280 rotate-y-180'>
-                <Image src={"/arrow.png"} height={70} width={90} />
+                <Image src={"/arrow.png"} height={70} width={90} alt='Arrow Image' />
             </div>
 
             <div className='w-full h-full inset-0 absolute z-0'>

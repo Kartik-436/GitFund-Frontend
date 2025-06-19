@@ -4,6 +4,7 @@ import DotGrid from '../WhyChoose/DotGridBackground';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { motion } from 'framer-motion';
+import Footer from '../Footer/Footer';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -141,6 +142,10 @@ const FinalPage = () => {
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <div className='mt-[50vh]'>
+                <Footer />
             </div>
 
             {/** Background DotGrid */}

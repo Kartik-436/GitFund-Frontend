@@ -5,21 +5,14 @@ import Lanyard from './Lanyard';
 
 const Footer = () => {
     return (
-        <div className='min-h-screen bg-[#F0EBE3] w-full'>
-            <Lanyard position={[0, 0, 20]} gravity={[0, -40, 0]} />
+        <div className='min-h-screen bg-[#fff] w-full relative select-none'>
 
-            <div className='w-full h-full inset-0 absolute z-0'>
-                <DotGrid
-                    dotSize={2.5}
-                    gap={26}
-                    baseColor="#eea21580"
-                    activeColor="#9D00FF"
-                    proximity={150}
-                    shockRadius={300}
-                    shockStrength={7}
-                    resistance={800}
-                    returnDuration={1.5}
-                />
+            {/* <div className='z-50 absolute top-0 right-[25vw]'>
+                <Lanyard position={[0, 0, 35]} gravity={[0, -40, 0]} />
+            </div> */}
+
+            <div className='z-50 absolute bottom-[20vh] leading-0 w-full'>
+                <h1 className='text-black text-[25vw] z-50 font-bold text-center'>GitFund</h1>
             </div>
         </div>
     )

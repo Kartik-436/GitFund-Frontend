@@ -14,7 +14,7 @@ import Footer from './../Components/Footer/Footer';
 export default function Home() {
   return (
     <SmoothScroll>
-      <div id="CompleteHomePage" className="bg-[#09090b] w-full min-h-screen overflow-hidden relative no-visible-scrollbar">
+      <div id="CompleteHomePage" className="bg-[#09090b] w-full min-h-screen overflow-hidden relative">
         <NavBarAll />
         <MaskedPage />
         <BountiesSection />
@@ -23,7 +23,6 @@ export default function Home() {
         <TestimonialsPage />
         <LastPortal />
         <FinalPage />
-        <Footer />
       </div>
     </SmoothScroll>
   )
