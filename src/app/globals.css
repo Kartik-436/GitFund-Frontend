@@ -5,6 +5,24 @@
     font-family: "Inter", "Lato", "Roboto", "Poppins", "Kanit";
 } */
 
+:root {
+    /* Define fallback fonts for each variable */
+    --font-barlow: var(--font-barlow), sans-serif;
+    --font-dancing-script: var(--font-dancing-script), cursive;
+    --font-faculty-glyphic: var(--font-faculty-glyphic), sans-serif;
+    --font-inter: var(--font-inter), sans-serif;
+    --font-kanit: var(--font-kanit), sans-serif;
+    --font-lxgw-marker-gothic: var(--font-lxgw-marker-gothic), sans-serif;
+    --font-lato: var(--font-lato), sans-serif;
+    --font-montserrat: var(--font-montserrat), sans-serif;
+    --font-parkinsans: var(--font-parkinsans), sans-serif;
+    --font-poppins: var(--font-poppins), sans-serif;
+    --font-raleway: var(--font-raleway), sans-serif;
+    --font-roboto-condensed: var(--font-roboto-condensed), sans-serif;
+    --font-roboto: var(--font-roboto), sans-serif;
+    --font-space-grotesk: var(--font-space-grotesk), sans-serif;
+}
+
 .no-visible-scrollbar {
     scrollbar-width: none;
     -ms-overflow-style: none;

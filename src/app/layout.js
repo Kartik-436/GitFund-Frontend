@@ -1,5 +1,21 @@
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import './globals.css'; // Make sure this path is correct for your global CSS file
+import {
+  barlow,
+  dancingScript,
+  facultyGlyphic,
+  inter,
+  kanit,
+  lxgwMarkerGothic,
+  lato,
+  montserrat,
+  parkinsans,
+  poppins,
+  raleway,
+  robotoCondensed,
+  roboto,
+  spaceGrotesk,
+} from "./../lib/fonts"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,7 +36,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${barlow.variable} ${dancingScript.variable} ${facultyGlyphic.variable} ${inter.variable} ${kanit.variable} ${lato.variable} ${montserrat.variable} ${parkinsans.variable} ${poppins.variable} ${raleway.variable} ${robotoCondensed.variable} ${roboto.variable} ${spaceGrotesk.variable} antialiased`}
       >
         {children}
       </body>

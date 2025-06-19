@@ -165,7 +165,7 @@ const MaskedPage = () => {
                         </div>
 
                         <div ref={contentRef} className="flex flex-col gap-5 text-white absolute top-54 md:top-35 z-50 items-center justify-center pointer-events-none">
-                            <div className="md:text-[96px] text-[50px] max-w-[70vw] text-center leading-none text-transparent bg-clip-text bg-gradient-to-r from-[#C1C1DF] from-55% to-[#333352] to-95% font-[inter] font-semibold">
+                            <div className="md:text-[96px] text-[50px] max-w-[70vw] text-center leading-none text-transparent bg-clip-text bg-gradient-to-r from-[#C1C1DF] from-55% to-[#333352] to-95% font-[Lato] font-semibold">
                                 Earn Crypto by Solving Open Source
                             </div>
                             <p className="max-w-[70vw] text-center leading-none text-[#e5e5ee] font-[inter]">
