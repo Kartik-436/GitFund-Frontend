@@ -8,6 +8,7 @@ import MaskedPage from "@/Components/Home/PortalReveal"
 import LastPortal from './../Components/End/LastPortal';
 import FinalPage from "@/Components/End/FinalPage";
 import NavBarAll from './../Components/NavBar/NavBarAll';
+import BountiesSection from './../Components/Bounties/BountiesSection';
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         {/* <NavbarDemo /> */}
         <NavBarAll />
         <MaskedPage />
+        <BountiesSection />
         <WhyChoosePage />
         <PricingPage />
         <TestimonialsPage />
