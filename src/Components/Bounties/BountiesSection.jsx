@@ -8,32 +8,32 @@ const BountiesSection = () => {
         {
             image: 'https://picsum.photos/300/300?grayscale',
             link: 'https://google.com/',
-            title: 'Item 1',
+            title: 'Bounty 1',
             description: 'This is pretty cool, right?'
         },
         {
             image: 'https://picsum.photos/400/400?grayscale',
             link: 'https://google.com/',
-            title: 'Item 2',
+            title: 'Bounty 2',
             description: 'This is pretty cool, right?'
         },
         {
             image: 'https://picsum.photos/500/500?grayscale',
             link: 'https://google.com/',
-            title: 'Item 3',
+            title: 'Bounty 3',
             description: 'This is pretty cool, right?'
         },
         {
             image: 'https://picsum.photos/600/600?grayscale',
             link: 'https://google.com/',
-            title: 'Item 4',
+            title: 'Bounty 4',
             description: 'This is pretty cool, right?'
         }
     ];
 
     return (
         <div className='min-h-[150vh] h-full relative flex items-center py-[20vh] pb-[40vh] justify-center'>
-            <div className='z-50 flex flex-col items-center w-full gap-[50vh]'>
+            <div className='z-50 flex flex-col items-center w-full gap-[35vh]'>
                 <div className='flex flex-col gap-3 w-full items-start px-[10vw]'>
                     <h1 className='text-[8vw] font-bold leading-0 text-shadow-white text-white'>
                         Popular
@@ -52,11 +52,11 @@ const BountiesSection = () => {
                 <Image src={"/arrow.png"} height={90} width={120} />
             </div>
 
-            <div className='absolute top-[66vh] right-[11vw] rotate-12'>
+            <div className='absolute top-[46vh] right-[11vw] rotate-12'>
                 <h1 className='text-[4vw] text-white text-nowrap font-semibold font-[Dancing_Script]'>Drag Me</h1>
             </div>
 
-            <div className='absolute top-[75.5vh] right-[6.5vw] rotate-280 rotate-y-180'>
+            <div className='absolute top-[55.5vh] right-[6.5vw] rotate-280 rotate-y-180'>
                 <Image src={"/arrow.png"} height={70} width={90} />
             </div>
 
