@@ -1,5 +1,4 @@
 'use client'
-import { NavbarDemo } from "@/Components/NavBar/finalNav"
 import PricingPage from "@/Components/Pricing Page/PricingPage"
 import SmoothScroll from "./SmoothScroll"
 import TestimonialsPage from './../Components/Testimonials/TestimonialsPage';
@@ -23,6 +22,7 @@ export default function Home() {
         <TestimonialsPage />
         <LastPortal />
         <FinalPage />
+        <Footer />
       </div>
     </SmoothScroll>
   )

@@ -72,32 +72,65 @@ function Band({ maxSpeed = 50, minSpeed = 0 }) {
   }, []);
 
   useFrame((state, delta) => {
+    if (!fixed.current || !card.current || !j1.current || !j2.current || !j3.current) return;
+
+    // Initialize lerped positions once
+    [j1, j2].forEach((ref) => {
+      const t = ref.current.translation();
+      if (!ref.current.lerped) {
+        ref.current.lerped = new THREE.Vector3(t.x, t.y, t.z);
+      } else {
+        const current = new THREE.Vector3(t.x, t.y, t.z);
+        ref.current.lerped.lerp(current, 0.2); // smooth interpolation
+      }
+    });
+
+    // Update curve using synced Vector3s
+    const tFix = fixed.current.translation();
+    const tJ3 = j3.current.translation();
+
+    curve.points[0].set(tJ3.x, tJ3.y, tJ3.z);
+    curve.points[1].copy(j2.current.lerped);
+    curve.points[2].copy(j1.current.lerped);
+    curve.points[3].set(tFix.x, tFix.y, tFix.z);
+
+    if (band.current?.geometry) {
+      band.current.geometry.setPoints(curve.getPoints(64));
+      band.current.geometry.verticesNeedUpdate = true;
+    }
+
+    // Optional: Drag support
     if (dragged) {
       vec.set(state.pointer.x, state.pointer.y, 0.5).unproject(state.camera);
       dir.copy(vec).sub(state.camera.position).normalize();
       vec.add(dir.multiplyScalar(state.camera.position.length()));
-      [card, j1, j2, j3, fixed].forEach((ref) => ref.current?.wakeUp());
-      card.current?.setNextKinematicTranslation({ x: vec.x - dragged.x, y: vec.y - dragged.y, z: vec.z - dragged.z });
-    }
-    if (fixed.current) {
-      [j1, j2].forEach((ref) => {
-        if (!ref.current.lerped) ref.current.lerped = new THREE.Vector3().copy(ref.current.translation());
-        const clampedDistance = Math.max(0.1, Math.min(1, ref.current.lerped.distanceTo(ref.current.translation())));
-        ref.current.lerped.lerp(ref.current.translation(), delta * (minSpeed + clampedDistance * (maxSpeed - minSpeed)));
+      card.current.setNextKinematicTranslation({
+        x: vec.x - dragged.x,
+        y: vec.y - dragged.y,
+        z: vec.z - dragged.z,
       });
-      curve.points[0].copy(j3.current.translation());
-      curve.points[1].copy(j2.current.lerped);
-      curve.points[2].copy(j1.current.lerped);
-      curve.points[3].copy(fixed.current.translation());
-      band.current.geometry.setPoints(curve.getPoints(32));
-      ang.copy(card.current.angvel());
-      rot.copy(card.current.rotation());
-      card.current.setAngvel({ x: ang.x, y: ang.y - rot.y * 0.25, z: ang.z });
+      [card, j1, j2, j3].forEach(ref => ref.current?.wakeUp());
     }
+
+    // Rotation stabilization
+    ang.copy(card.current.angvel());
+    rot.copy(card.current.rotation());
+    card.current.setAngvel({ x: ang.x, y: ang.y - rot.y * 0.25, z: ang.z });
   });
 
   curve.curveType = 'chordal';
   texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
+
+  const [resolution, setResolution] = useState([window.innerWidth, window.innerHeight]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setResolution([window.innerWidth, window.innerHeight]);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
 
   return (
     <>
@@ -134,7 +167,7 @@ function Band({ maxSpeed = 50, minSpeed = 0 }) {
         <meshLineMaterial
           color="white"
           depthTest={false}
-          resolution={isSmall ? [1000, 2000] : [1000, 1000]}
+          resolution={resolution}
           useMap
           map={texture}
           repeat={[-4, 1]}
