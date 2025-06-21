@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const StringAnimation2 = () => {
     const string1Ref = useRef(null);
-    const defaultPath = "M 300 100 Q 700 100 1250 100";
+    const defaultPath = "M 100 100 Q 700 100 1350 100";
     const [isMouseOver, setIsMouseOver] = useState(false);
 
     useEffect(() => {
@@ -22,7 +22,7 @@ const StringAnimation2 = () => {
                 const relativeX = event.clientX - boundingBox.left;
                 const relativeY = event.clientY - boundingBox.top;
 
-                const newPath = `M 300 100 Q ${relativeX} ${relativeY} 1250 100`;
+                const newPath = `M 100 100 Q ${relativeX} ${relativeY} 1350 100`;
 
                 gsap.to(svgElement.querySelector('path'), {
                     attr: { d: newPath },
@@ -60,7 +60,7 @@ const StringAnimation2 = () => {
         <div>
             <div ref={string1Ref} id="string1" className='lg:flex items-center justify-center h-[6vh] overflow-visible z-[5] hidden mb-8'>
                 <svg id="str1" width="1440" height="200" className='z-[5]'>
-                    <path d="M 300 100 Q 700 100 1250 100" stroke={"#dbcaab"} fill="transparent" />
+                    <path d="M 100 100 Q 700 100 1350 100" stroke={"#dbcaab"} strokeWidth={2} fill="transparent" />
                 </svg>
             </div>
         </div>
@@ -137,7 +137,7 @@ const FinalPage = () => {
     const paragraph = "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus maiores praesentium ad!";
 
     return (
-        <div className='min-h-[300vh] w-full bg-[#F0EBE3] z-10 overflow-hidden relative'>
+        <div className='min-h-[350vh] w-full bg-[#F0EBE3] z-10 overflow-hidden relative'>
             {/** Floating Balls */}
             <div ref={(el) => (ballRefs.current[0] = el)}
                 className={'h-35 w-35 bg-white shadow-xl absolute z-50 rounded-full flex items-center justify-center top-[130vh] left-[80%]'}
@@ -183,7 +183,7 @@ const FinalPage = () => {
                 ))}
             </div>
 
-            <div className='w-full flex items-center justify-center mt-[20vh] z-50 mb-[80vh]'>
+            <div className='w-full flex items-center justify-center mt-[20vh] z-50 mb-[120vh]'>
                 <div ref={Notiref1} className='bg-[#F0EBE3] h-[60vh] w-[80vw] flex items-start justify-center rounded-full border-2 border-[#dbcaab]'>
                     <div ref={Notiref2} className='bg-[#09090b] h-[54vh] w-[80vw] rounded-full z-50'>
                         <div className='w-full h-full inset-0 absolute z-0'>
@@ -203,8 +203,23 @@ const FinalPage = () => {
                 </div>
             </div>
 
-            <div className='absolute bottom-[40vh] left-0 z-50'>
+            <div className='absolute bottom-[50vh] left-0 z-50 flex flex-col items-center w-full min-h-[50vh] justify-center'>
                 <StringAnimation2 />
+
+                <div className='flex flex-col items-center justify-center w-full mt-[-5.5vh] gap-[11vh]'>
+                    <h1 className='text-5xl font-[Marcellus] font-semibold w-full text-center pointer-events-none z-0'>
+                        Register Now to earn crypto for open source.
+                    </h1>
+
+                    <button className='px-13 py-7 bg-[#a305ff] text-white text-2xl cursor-pointer font-semibold font-[Inter] rounded-full'>
+                        Register
+                    </button>
+                </div>
+            </div>
+
+            <div className='w-full flex justify-between items-end absolute bottom-5 px-[12vh]'>
+                <h1 className='text-6xl font-[Marcellus] font-semibold'>Organised.</h1>
+                <h1 className='text-2xl font-[Marcellus] font-medium'>So you don't have to be.</h1>
             </div>
 
             {/** Background DotGrid */}

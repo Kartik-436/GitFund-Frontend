@@ -12,6 +12,7 @@ import {
     Roboto_Condensed,
     Roboto,
     Space_Grotesk,
+    Marcellus
 } from 'next/font/google';
 
 export const barlow = Barlow({
@@ -27,6 +28,13 @@ export const dancingScript = Dancing_Script({
     display: 'swap',
     variable: '--font-dancing-script',
     weight: ['400', '500', '600', '700'],
+});
+
+export const marcellus = Marcellus({
+    subsets: ['latin'],
+    display: 'swap',
+    variable: '--font-Marcellus',
+    weight: '400',
 });
 
 export const facultyGlyphic = Faculty_Glyphic({

@@ -7,7 +7,7 @@ import MaskedPage from "@/Components/Home/PortalReveal"
 import LastPortal from './../Components/End/LastPortal';
 import FinalPage from "@/Components/End/FinalPage";
 import NavBarAll from './../Components/NavBar/NavBarAll';
-import BountiesSection from './../Components/Bounties/BountiesSection';
+import BentoGridDemo from './../Components/Bounties/BountiesSection';
 import Footer from './../Components/Footer/Footer';
 
 export default function Home() {
@@ -16,7 +16,7 @@ export default function Home() {
       <div id="CompleteHomePage" className="bg-[#09090b] w-full min-h-screen overflow-hidden relative">
         <NavBarAll />
         <MaskedPage />
-        <BountiesSection />
+        <BentoGridDemo />
         <WhyChoosePage />
         <PricingPage />
         <TestimonialsPage />

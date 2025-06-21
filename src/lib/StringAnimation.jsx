@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from 'react'
 
 const StringAnimation = () => {
     const string1Ref = useRef(null);
-    const defaultPath = "M 10 100 Q 700 100 1000 100";
+    const defaultPath = "M 40 100 Q 700 100 1050 100";
     const [isMouseOver, setIsMouseOver] = useState(false);
 
     useEffect(() => {
@@ -16,7 +16,7 @@ const StringAnimation = () => {
                 const relativeX = event.clientX - boundingBox.left;
                 const relativeY = event.clientY - boundingBox.top;
 
-                const newPath = `M 10 100 Q ${relativeX} ${relativeY} 1000 100`;
+                const newPath = `M 40 100 Q ${relativeX} ${relativeY} 1050 100`;
 
                 gsap.to(svgElement.querySelector('path'), {
                     attr: { d: newPath },
@@ -54,7 +54,7 @@ const StringAnimation = () => {
         <div>
             <div ref={string1Ref} id="string1" className='lg:flex items-center justify-center h-[6vh] w-full overflow-visible z-[5] hidden mb-8'>
                 <svg id="str1" width="1440" height="200" className='z-[5]'>
-                    <path d="M 10 100 Q 700 100 1000 100" stroke={"#09090b"} fill="transparent" />
+                    <path d="M 40 100 Q 700 100 1050 100" stroke={"#09090b"} fill="transparent" />
                 </svg>
             </div>
         </div>

@@ -3,6 +3,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import { motion, useMotionValue, animate } from 'framer-motion';
+import Image from 'next/image';
 
 const NavBarAll = () => {
     const [isVisible, setIsVisible] = useState(true);
@@ -84,6 +85,8 @@ const NavBarAll = () => {
                     <span className="text-[#a200ff] font-bold font-[kanit] md:text-[2.2rem] text-[1rem]">
                         Fund
                     </span>
+
+                    {/* <Image alt="Font Image" src="/FONT-1.png" width={200} height={200} /> */}
                 </div>
 
                 <div className='absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]'>

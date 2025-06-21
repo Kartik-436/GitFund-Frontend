@@ -3,6 +3,7 @@ import React from 'react'
 import DotGrid from '../WhyChoose/DotGridBackground';
 import Lanyard from './Lanyard';
 import StringAnimation from './../../lib/StringAnimation';
+import Image from 'next/image';
 
 const PurpleSphere = ({   // Default left position
     width = '200px',    // Default width
@@ -64,22 +65,37 @@ const PurpleSphere = ({   // Default left position
 
 const Footer = () => {
     return (
-        <div className='min-h-[105vh] bg-[#F0EBE3] w-full relative select-none overflow-hidden'>
+        <div className='min-h-[73vh] bg-[#F0EBE3] w-full relative select-none overflow-hidden z-20'>
 
-            <div className=' absolute top-[25vh] left-0'>
+            {/* <div className='z-20 absolute bottom-[40vh] left-0'>
                 <StringAnimation />
             </div>
 
-            <div className='absolute right-0 w-[40vw] top-[-10vh] h-screen flex items-end z-50 justify-end'>
-                <Lanyard position={[-2, 0, 17]} gravity={[0, -60, 0]} />
+            <div className='z-20 absolute top-0 left-0'>
+                <StringAnimation />
+            </div> */}
+
+            <div className='w-full h-full'>
+                <div className='w-[90vw] h-[0.15vh] bg-[#09090b] absolute top-0 left-[4.7vw]'></div>
+            </div>
+
+            <div>
+
+            </div>
+
+            <div className='absolute right-0 w-[30vw] top-[-30vh] h-screen flex items-end z-50 justify-end'>
+                <Lanyard position={[0, 0, 23]} gravity={[0, -60, 0]} />
             </div>
 
             {/* <div className='absolute top-[-1.8vh] z-[52] right-[16.5vw] m-0 p-0 rotate-180'>
                 <PurpleSphere width='110px' height='110px' />
             </div> */}
 
-            <div className='z-50 absolute bottom-[20vh] leading-0 w-full'>
-                <h1 className='text-black text-[29vw] z-50 font-bold font-[Barlow] text-center'>GitFund</h1> {/* parkinsans, Barlow, Montserrat, Raleway,  */}
+            <div className='z-10 absolute bottom-[21vh] leading-0 w-full'>
+                <h1 className='text-black text-[29vw] z-50 font-bold font-[Barlow] text-center w-full'>GitFund</h1>
+                {/*parkinsans, Barlow, Montserrat, Raleway, */}
+
+                {/* <Image alt="Font Image" src="/gitlogo.svg" width={2000} height={2000} /> */}
             </div>
 
             <div className='w-full h-full inset-0 absolute z-0'>

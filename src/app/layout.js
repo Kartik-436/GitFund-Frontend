@@ -6,7 +6,6 @@ import {
   facultyGlyphic,
   inter,
   kanit,
-  lxgwMarkerGothic,
   lato,
   montserrat,
   parkinsans,
@@ -15,6 +14,7 @@ import {
   robotoCondensed,
   roboto,
   spaceGrotesk,
+  marcellus
 } from "./../lib/fonts"
 
 const geistSans = Geist({
@@ -36,7 +36,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${barlow.variable} ${dancingScript.variable} ${facultyGlyphic.variable} ${inter.variable} ${kanit.variable} ${lato.variable} ${montserrat.variable} ${parkinsans.variable} ${poppins.variable} ${raleway.variable} ${robotoCondensed.variable} ${roboto.variable} ${spaceGrotesk.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${barlow.variable} ${dancingScript.variable} ${facultyGlyphic.variable} ${inter.variable} ${kanit.variable} ${lato.variable} ${montserrat.variable} ${parkinsans.variable} ${poppins.variable} ${raleway.variable} ${robotoCondensed.variable} ${roboto.variable} ${spaceGrotesk.variable} ${marcellus.variable} antialiased`}
       >
         {children}
       </body>
