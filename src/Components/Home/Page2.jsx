@@ -36,7 +36,7 @@ export default function Page2() {
     }, [])
 
     return (
-        <div className="min-h-screen bg-[#09090b] text-white relative p-30 mb-[20vh] flex flex-col items-center">
+        <div className="md:min-h-screen  bg-[#09090b] text-white relative p-30 mb-[20vh] flex flex-col items-center">
 
             <div className='w-full h-full inset-0 absolute z-0'>
                 <DotGrid
@@ -56,11 +56,11 @@ export default function Page2() {
                 <Bg />
             </div> */}
 
-            <div ref={textref} className='min-h-[30vh] z-20'>
+            <div ref={textref} className='min-h-[30vh] z-20 md:mt-0 mt-[20vh]'>
                 <h1 className='md:text-[6vw] text-[12vw] capitalize text-center font-semibold'>Introducing GitFund</h1>
                 <p className='font-medium text-center'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, quasi.</p>
             </div>
-            <div style={{ perspective: "1000px" }} className='rounded-xl min-h-screen w-full flex flex-col items-center md:gap-15 md:p-10 p-5 gap-5 z-20'>
+            <div style={{ perspective: "1000px" }} className='rounded-xl min-h-[60vh] md:min-h-screen w-full flex flex-col items-center md:gap-15 md:p-10 p-5 gap-5 z-20'>
                 <div className="flex gap-1 md:gap-6 bg-[#2b2b2b] rounded-full border-0 p-[2.6px] z-20">
                     {['Link1', 'Link2', 'Link3', 'Link4', 'Link5'].map((role) => (
                         <button
