@@ -140,28 +140,28 @@ const FinalPage = () => {
         <div className='min-h-[350vh] w-full bg-[#F0EBE3] z-10 overflow-hidden relative'>
             {/** Floating Balls */}
             <div ref={(el) => (ballRefs.current[0] = el)}
-                className={'h-35 w-35 bg-white shadow-xl absolute z-50 rounded-full flex items-center justify-center top-[130vh] left-[80%]'}
+                className={'h-22 w-22 md:h-35 md:w-35 bg-white shadow-xl absolute z-50 rounded-full flex items-center justify-center top-[130vh] left-[80%]'}
             >
                 <div className="bg-[#33333346] h-[128px] w-[128px] rounded-full blur-lg"></div>
                 <div className="bg-[#ffffffc5] h-10 w-10 rounded-full blur-md absolute"></div>
             </div>
 
             <div ref={(el) => (ballRefs.current[1] = el)}
-                className={'h-40 w-40 bg-white shadow-xl absolute z-50 rounded-full flex items-center justify-center top-[83vh] left-[80%]'}
+                className={'h-27 w-27 md:h-40 md:w-40 bg-white shadow-xl absolute z-50 rounded-full flex items-center justify-center top-[83vh] left-[80%]'}
             >
                 <div className="bg-[#33333346] h-[128px] w-[128px] rounded-full blur-lg"></div>
                 <div className="bg-[#ffffffc5] h-10 w-10 rounded-full blur-md absolute"></div>
             </div>
 
             <div ref={(el) => (ballRefs.current[2] = el)}
-                className={'h-40 w-40 bg-white shadow-xl absolute z-50 rounded-full flex items-center justify-center top-[132vh] left-[11%]'}
+                className={'h-27 w-27 md:h-40 md:w-40 bg-white shadow-xl absolute z-50 rounded-full flex items-center justify-center top-[132vh] left-[11%]'}
             >
                 <div className="bg-[#33333346] h-[128px] w-[128px] rounded-full blur-lg"></div>
                 <div className="bg-[#ffffffc5] h-10 w-10 rounded-full blur-md absolute"></div>
             </div>
 
             <div ref={(el) => (ballRefs.current[3] = el)}
-                className={'h-46 w-46 bg-white shadow-xl absolute z-50 rounded-full flex items-center justify-center top-[65vh] left-[20%]'}
+                className={'h-36 md:h-46 w-36 md:w-46 bg-white shadow-xl absolute z-50 rounded-full flex items-center justify-center top-[65vh] left-[20%]'}
             >
                 <div className="bg-[#33333346] h-[128px] w-[128px] rounded-full blur-lg"></div>
                 <div className="bg-[#ffffffc5] h-10 w-10 rounded-full blur-md absolute"></div>
@@ -170,7 +170,7 @@ const FinalPage = () => {
             {/** Animated Gradient Text */}
             <div
                 ref={textRef}
-                className='text-[5.6vw] max-w-[60vw] mt-[40vh] leading-[1.2] text-center font-bold mx-auto py-[10vh]'
+                className='md:text-[5.6vw] text-[10vw] max-w-[80vw] md:max-w-[60vw] mt-[40vh] leading-[1.2] text-center font-bold mx-auto md:py-[10vh] py-[26vh]'
             >
                 {paragraph.split(' ').map((word, i) => (
                     <motion.span
@@ -184,8 +184,8 @@ const FinalPage = () => {
             </div>
 
             <div className='w-full flex items-center justify-center mt-[20vh] z-50 mb-[120vh]'>
-                <div ref={Notiref1} className='bg-[#F0EBE3] h-[60vh] w-[80vw] flex items-start justify-center rounded-full border-2 border-[#dbcaab]'>
-                    <div ref={Notiref2} className='bg-[#09090b] h-[54vh] w-[80vw] rounded-full z-50'>
+                <div ref={Notiref1} className='bg-[#f0ebe3] h-[60vh] w-[90vw] md:w-[80vw] flex items-start justify-center rounded-full border-2 border-[#dbcaab]'>
+                    <div ref={Notiref2} className='bg-[#09090b] h-[54vh] w-[90vw] md:w-[80vw] rounded-full z-50'>
                         <div className='w-full h-full inset-0 absolute z-0'>
                             <DotGrid
                                 dotSize={2.5}
@@ -204,22 +204,28 @@ const FinalPage = () => {
             </div>
 
             <div className='absolute bottom-[50vh] left-0 z-50 flex flex-col items-center w-full min-h-[50vh] justify-center'>
-                <StringAnimation2 />
+                <div className='md:flex hidden'>
+                    <StringAnimation2 />
+                </div>
 
-                <div className='flex flex-col items-center justify-center w-full mt-[-5.5vh] gap-[11vh]'>
-                    <h1 className='text-5xl font-[Marcellus] font-semibold w-full text-center pointer-events-none z-0'>
+                <div className='flex md:hidden w-full'>
+                    <div className='w-[80vw] h-[0.3vh] bg-[#dbcaab] absolute top-0 left-[10vw]'></div>
+                </div>
+
+                <div className='flex flex-col items-center justify-center w-full mt-[-21vh] md:mt-[-5.5vh] gap-[3vh] md:gap-[11vh]'>
+                    <h1 className='md:text-5xl text-[8vw] font-[Marcellus] font-semibold w-full text-center pointer-events-none z-0'>
                         Register Now to earn crypto for open source.
                     </h1>
 
-                    <button className='px-13 py-7 bg-[#a305ff] text-white text-2xl cursor-pointer font-semibold font-[Inter] rounded-full'>
+                    <button className='md:px-13 px-10 md:py-7 py-5 bg-[#a305ff] text-white text-2xl cursor-pointer font-semibold font-[Inter] rounded-full'>
                         Register
                     </button>
                 </div>
             </div>
 
-            <div className='w-full flex justify-between items-end absolute bottom-5 px-[12vh]'>
-                <h1 className='text-6xl font-[Marcellus] font-semibold'>Organised.</h1>
-                <h1 className='text-2xl font-[Marcellus] font-medium'>So you don't have to be.</h1>
+            <div className='w-full flex md:flex-row flex-col md:justify-between md:items-end items-start justify-start absolute md:bottom-5 bottom-8 md:px-[12vh] px-5'>
+                <h1 className='md:text-6xl text-5xl font-[Marcellus] font-semibold'>Organised.</h1>
+                <h1 className='md:text-2xl text-xl font-[Marcellus] font-medium'>So you don't have to be.</h1>
             </div>
 
             {/** Background DotGrid */}

@@ -57,11 +57,11 @@ export default function Page2() {
             </div> */}
 
             <div ref={textref} className='min-h-[30vh] z-20'>
-                <h1 className='text-[6vw] capitalize text-center font-semibold'>Introducing GitFund</h1>
+                <h1 className='md:text-[6vw] text-[12vw] capitalize text-center font-semibold'>Introducing GitFund</h1>
                 <p className='font-medium text-center'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, quasi.</p>
             </div>
-            <div style={{ perspective: "1000px" }} className='rounded-xl min-h-screen w-full flex flex-col items-center gap-15 p-10 z-20'>
-                <div className="flex gap-6 bg-[#2b2b2b] rounded-full border-0 p-[2.6px] z-20">
+            <div style={{ perspective: "1000px" }} className='rounded-xl min-h-screen w-full flex flex-col items-center md:gap-15 md:p-10 p-5 gap-5 z-20'>
+                <div className="flex gap-1 md:gap-6 bg-[#2b2b2b] rounded-full border-0 p-[2.6px] z-20">
                     {['Link1', 'Link2', 'Link3', 'Link4', 'Link5'].map((role) => (
                         <button
                             key={role}
@@ -77,7 +77,7 @@ export default function Page2() {
                                 />
                             )}
                             <span className={clsx(
-                                'px-6 py-2 rounded-full text-md font-normal capitalize transition-all relative cursor-pointer',
+                                'md:px-6 py-2 px-3 rounded-full md:text-md font-normal capitalize transition-all relative cursor-pointer',
                                 active === role ? 'bg-transparent' : 'text-gray-400 hover:text-white'
                             )}>
                                 {role}
@@ -87,8 +87,8 @@ export default function Page2() {
                 </div>
 
                 <div ref={Screenref} className='bg-[#09090b] rotate-x-37'>
-                    <div className="bg-white/8 h-[95vh] w-[80vw] rounded-xl flex items-center justify-center z-20">
-                        <div className='bg-black h-[92vh] w-[78.5vw] rounded-lg'>
+                    <div className="bg-white/8 h-[51vh] md:h-[95vh] w-[80vw] rounded-xl flex items-center justify-center z-20">
+                        <div className='bg-black h-[50vh] md:h-[92vh] w-[78.5vw] rounded-lg'>
                             <video src="#"></video>
                         </div>
                     </div>

@@ -107,7 +107,7 @@ const InfiniteScroller = () => {
                     .map((_, i) => (
                         <li
                             key={i}
-                            className='text-[6vw] font-semibold flex items-end justify-center gap-5'
+                            className='md:text-[6vw] text-[15vw] font-semibold flex items-end justify-center gap-5'
                         >
                             <p>GitFund is Built Different</p>
                             <PurpleSphere width='120px' height='110px' />

@@ -65,7 +65,7 @@ const PurpleSphere = ({   // Default left position
 
 const Footer = () => {
     return (
-        <div className='min-h-[73vh] bg-[#F0EBE3] w-full relative select-none overflow-hidden z-20'>
+        <div className='md:min-h-[73vh] min-h-[60vh] bg-[#F0EBE3] w-full relative select-none overflow-hidden z-20'>
 
             {/* <div className='z-20 absolute bottom-[40vh] left-0'>
                 <StringAnimation />
@@ -76,22 +76,26 @@ const Footer = () => {
             </div> */}
 
             <div className='w-full h-full'>
-                <div className='w-[90vw] h-[0.15vh] bg-[#09090b] absolute top-0 left-[4.7vw]'></div>
+                <div className='w-[90vw] md:h-[0.15vh] h-[0.2vh] bg-[#09090b] absolute top-0 left-[4.7vw]'></div>
             </div>
 
             <div>
 
             </div>
 
-            <div className='absolute right-0 w-[30vw] top-[-30vh] h-screen flex items-end z-50 justify-end'>
+            <div className='absolute right-0 w-[30vw] top-[-30vh] h-screen hidden md:flex items-end z-50 justify-end'>
                 <Lanyard position={[0, 0, 23]} gravity={[0, -60, 0]} />
+            </div>
+
+            <div className='absolute right-0 w-[35vw] top-[-25vh] h-screen md:hidden flex items-end z-50 justify-end'>
+                <Lanyard position={[0, 0, 35]} gravity={[0, -60, 0]} />
             </div>
 
             {/* <div className='absolute top-[-1.8vh] z-[52] right-[16.5vw] m-0 p-0 rotate-180'>
                 <PurpleSphere width='110px' height='110px' />
             </div> */}
 
-            <div className='z-10 absolute bottom-[21vh] leading-0 w-full'>
+            <div className='z-10 absolute md:bottom-[21vh] bottom-[5vh] leading-0 w-full'>
                 <h1 className='text-black text-[29vw] z-50 font-bold font-[Barlow] text-center w-full'>GitFund</h1>
                 {/*parkinsans, Barlow, Montserrat, Raleway, */}
 

@@ -68,6 +68,12 @@ const NavBarAll = () => {
         { text: 'Dashboard', id: 'dashboard' },
     ];
 
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setMenuOpen(prev => !prev);
+    };
+
     return (
         <div>
             <div
@@ -79,17 +85,98 @@ const NavBarAll = () => {
                     onClick={handleClick}
                     className="rounded-full flex items-center justify-center gap-1 cursor-pointer hover:scale-110 transition-[all_1s_ease-in-out] active:scale-95"
                 >
-                    <span className="text-white font-semibold font-[kanit] md:text-[2.2rem] text-[1rem]">
+                    <span className="text-white font-semibold font-[kanit] md:text-[2.2rem] text-[1.5rem]">
                         Git
                     </span>
-                    <span className="text-[#a200ff] font-bold font-[kanit] md:text-[2.2rem] text-[1rem]">
+                    <span className="text-[#a200ff] font-bold font-[kanit] md:text-[2.2rem] text-[1.5rem]">
                         Fund
                     </span>
 
                     {/* <Image alt="Font Image" src="/FONT-1.png" width={200} height={200} /> */}
                 </div>
 
-                <div className='absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]'>
+                {/* Mobile Nav - Burger Menu */}
+                <div className="md:hidden fixed top-6 right-5 z-[100]">
+                    <motion.div
+                        className="w-10 h-10 flex flex-col justify-center items-center gap-1 cursor-pointer"
+                        onClick={toggleMenu}
+                        initial={false}
+                        animate={menuOpen ? "open" : "closed"}
+                    >
+                        <motion.span
+                            className="w-8 h-[2px] bg-white rounded"
+                            variants={{
+                                open: { rotate: 45, y: 6 },
+                                closed: { rotate: 0, y: 0 },
+                            }}
+                            transition={{ duration: 0.3 }}
+                        />
+                        <motion.span
+                            className="w-8 h-[2px] bg-white rounded"
+                            variants={{
+                                open: { opacity: 0 },
+                                closed: { opacity: 1 },
+                            }}
+                            transition={{ duration: 0.2 }}
+                        />
+                        <motion.span
+                            className="w-8 h-[2px] bg-white rounded"
+                            variants={{
+                                open: { rotate: -45, y: -6 },
+                                closed: { rotate: 0, y: 0 },
+                            }}
+                            transition={{ duration: 0.3 }}
+                        />
+                    </motion.div>
+                </div>
+
+                {/* Mobile Menu Drawer */}
+                <motion.div
+                    className="md:hidden fixed top-0 left-0 w-full h-screen backdrop-blur-lg bg-[#09090b99] z-[90] px-6 py-10 flex flex-col gap-6"
+                    initial={{ x: '100%' }}
+                    animate={{ x: menuOpen ? '0%' : '100%' }}
+                    transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+                >
+                    <div className="flex flex-col gap-6 mt-20 text-white font-[kanit] text-xl">
+                        {navItems.map((item) => (
+                            <motion.div
+                                key={item.id}
+                                onClick={() => {
+                                    handleNavigation(item.id);
+                                    setMenuOpen(false);
+                                }}
+                                whileTap={{ scale: 0.95 }}
+                                className="border-b border-white/20 pb-2"
+                            >
+                                {item.text}
+                            </motion.div>
+                        ))}
+                        <div className="mt-6 flex flex-col gap-4">
+                            <motion.div
+                                className="py-3 text-center rounded-lg font-semibold bg-white/10 border border-white/20 text-white backdrop-blur-lg"
+                                whileTap={{ scale: 0.95 }}
+                                onClick={() => {
+                                    handleNavigation('');
+                                    setMenuOpen(false);
+                                }}
+                            >
+                                Register
+                            </motion.div>
+                            <motion.div
+                                className="py-3 text-center rounded-lg font-semibold bg-[#a200ff] text-white backdrop-blur-lg"
+                                whileTap={{ scale: 0.95 }}
+                                onClick={() => {
+                                    handleNavigation('');
+                                    setMenuOpen(false);
+                                }}
+                            >
+                                Sign In
+                            </motion.div>
+                        </div>
+                    </div>
+                </motion.div>
+
+                <div className='absolute top-[50%] left-[50%] md:flex hidden translate-x-[-50%] translate-y-[-50%]'>
                     <div
                         className="relative min-w-[30vw] px-2 scale-0 lg:scale-100 h-[9vh] flex items-center justify-center text-white rounded-full border-[1.2px] border-[#ffffff88] gap-10 cursor-pointer z-[1] bg-[#09090b50] overflow-hidden"
                         id="NavBar"
@@ -121,7 +208,7 @@ const NavBarAll = () => {
                     </div>
                 </div>
 
-                <div className='flex items-center justify-center gap-4 cursor-pointer'>
+                <div className='md:flex hidden items-center justify-center gap-4 cursor-pointer'>
                     <div className='text-lg text-white font-semibold' onClick={() => handleNavigation('')}>
                         Register
                     </div>
