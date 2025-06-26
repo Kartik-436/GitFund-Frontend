@@ -92,7 +92,7 @@ import {
 
 function BentoGridDemo() {
     return (
-        <div className='min-h-[150vh] h-full relative flex flex-col gap-[10vh] items-center py-[20vh] justify-center'>
+        <div id='bounties' className='min-h-[150vh] h-full relative flex flex-col gap-[10vh] items-center py-[20vh] justify-center'>
             <div className='flex flex-col gap-3 w-full items-start px-[10vw]'>
                 <h1 className='text-[8vw] font-bold leading-0 text-shadow-white text-white'>
                     Popular
@@ -128,8 +128,8 @@ function BentoGridDemo() {
 
             <div className='w-full h-full inset-0 absolute z-0'>
                 <DotGrid
-                    dotSize={2.5}
-                    gap={26}
+                    dotSize={2}
+                    gap={19}
                     baseColor="#ffffff50"
                     activeColor="#9D00FF"
                     proximity={150}

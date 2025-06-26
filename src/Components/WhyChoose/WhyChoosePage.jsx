@@ -310,8 +310,8 @@ const WhyChoosePage = () => {
 
             <div className='w-full h-full min-h-screen relative'>
                 <DotGrid
-                    dotSize={2.5}
-                    gap={26}
+                    dotSize={2}
+                    gap={19}
                     baseColor="#ffffff50"
                     activeColor="#9D00FF"
                     proximity={150}

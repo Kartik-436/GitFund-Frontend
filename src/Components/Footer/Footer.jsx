@@ -65,7 +65,7 @@ const PurpleSphere = ({   // Default left position
 
 const Footer = () => {
     return (
-        <div className='md:min-h-[73vh] min-h-[60vh] bg-[#F0EBE3] w-full relative select-none overflow-hidden z-20'>
+        <div className='md:min-h-[73vh] min-h-[60vh] bg-[#fffafa] w-full relative select-none overflow-hidden z-20'>
 
             {/* <div className='z-20 absolute bottom-[40vh] left-0'>
                 <StringAnimation />
@@ -104,8 +104,8 @@ const Footer = () => {
 
             <div className='w-full h-full inset-0 absolute z-0'>
                 <DotGrid
-                    dotSize={2.5}
-                    gap={26}
+                    dotSize={2}
+                    gap={19}
                     baseColor="#eea21580"
                     activeColor="#9D00FF"
                     proximity={150}

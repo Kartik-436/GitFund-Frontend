@@ -78,7 +78,7 @@ const NavBarAll = () => {
         <div>
             <div
                 ref={NavBarC}
-                className={`h-[12vh] z-50 w-screen fixed top-[10px] md:top-4 left-0 pl-9 md:px-16 flex items-center justify-between transition-transform duration-500 ${isVisible ? 'translate-y-0' : '-translate-y-[150%]'
+                className={`h-[12vh] z-[9999] w-screen fixed top-[10px] md:top-4 left-0 pl-9 md:px-16 flex items-center justify-between transition-transform duration-500 ${isVisible ? 'translate-y-0' : '-translate-y-[150%]'
                     }`}
             >
                 <div

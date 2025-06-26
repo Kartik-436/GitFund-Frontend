@@ -134,10 +134,10 @@ const FinalPage = () => {
         });
     };
 
-    const paragraph = "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus maiores praesentium ad!";
+    const paragraph = "Designed to let you focus on your work and earn crypto.";
 
     return (
-        <div className='min-h-[350vh] w-full bg-[#F0EBE3] z-10 overflow-hidden relative'>
+        <div className='min-h-[350vh] w-full bg-[#fffafa] z-10 overflow-hidden relative'>
             {/** Floating Balls */}
             <div ref={(el) => (ballRefs.current[0] = el)}
                 className={'h-22 w-22 md:h-35 md:w-35 bg-white shadow-xl absolute z-50 rounded-full flex items-center justify-center top-[130vh] left-[80%]'}
@@ -170,12 +170,12 @@ const FinalPage = () => {
             {/** Animated Gradient Text */}
             <div
                 ref={textRef}
-                className='md:text-[5.6vw] text-[10vw] max-w-[80vw] md:max-w-[60vw] mt-[40vh] leading-[1.2] text-center font-bold mx-auto md:py-[10vh] py-[26vh]'
+                className='md:text-[5.6vw] text-[11vw] max-w-[80vw] md:max-w-[50vw] mt-[40vh] md:leading-[1.2] text-center font-medium mx-auto md:py-[20vh] py-[30vh] font-[Poppins] z-20'
             >
                 {paragraph.split(' ').map((word, i) => (
                     <motion.span
                         key={i}
-                        className="scroll-word inline-block mr-[0.5vw]"
+                        className="scroll-word inline-block mr-[1.2vw] z-20"
                         initial={{ color: '#dbcaab' }}
                     >
                         {word}
@@ -184,12 +184,12 @@ const FinalPage = () => {
             </div>
 
             <div className='w-full flex items-center justify-center mt-[20vh] z-50 mb-[120vh]'>
-                <div ref={Notiref1} className='bg-[#f0ebe3] h-[60vh] w-[90vw] md:w-[80vw] flex items-start justify-center rounded-full border-2 border-[#dbcaab]'>
+                <div ref={Notiref1} className='bg-transparent h-[60vh] w-[90vw] md:w-[80vw] flex items-start justify-center rounded-full border-2 border-[#dbcaab]'>
                     <div ref={Notiref2} className='bg-[#09090b] h-[54vh] w-[90vw] md:w-[80vw] rounded-full z-50'>
                         <div className='w-full h-full inset-0 absolute z-0'>
                             <DotGrid
-                                dotSize={2.5}
-                                gap={26}
+                                dotSize={2}
+                                gap={19}
                                 baseColor="#ffffff50"
                                 activeColor="#9D00FF"
                                 proximity={150}
@@ -231,8 +231,8 @@ const FinalPage = () => {
             {/** Background DotGrid */}
             <div className='w-full h-full inset-0 absolute z-0'>
                 <DotGrid
-                    dotSize={2.5}
-                    gap={26}
+                    dotSize={2}
+                    gap={19}
                     baseColor="#eea21580"
                     activeColor="#9D00FF"
                     proximity={150}
