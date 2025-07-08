@@ -9,21 +9,24 @@ import FinalPage from "@/Components/End/FinalPage";
 import NavBarAll from './../Components/NavBar/NavBarAll';
 import BentoGridDemo from './../Components/Bounties/BountiesSection';
 import Footer from './../Components/Footer/Footer';
+import { ThemeProvider } from "@/Components/End/ThemeChangeContext";
 
 export default function Home() {
   return (
     <SmoothScroll>
-      <div id="CompleteHomePage" className="bg-[#09090b] w-full min-h-screen overflow-hidden relative">
-        <NavBarAll />
-        <MaskedPage />
-        <BentoGridDemo />
-        <WhyChoosePage />
-        <PricingPage />
-        <TestimonialsPage />
-        <LastPortal />
-        <FinalPage />
-        <Footer />
-      </div>
+      <ThemeProvider>
+        <div id="CompleteHomePage" className="bg-[#09090b] w-full min-h-screen overflow-hidden relative">
+          <NavBarAll />
+          <MaskedPage />
+          <BentoGridDemo />
+          <WhyChoosePage />
+          <PricingPage />
+          <TestimonialsPage />
+          <LastPortal />
+          <FinalPage />
+          <Footer />
+        </div>
+      </ThemeProvider>
     </SmoothScroll>
   )
 }

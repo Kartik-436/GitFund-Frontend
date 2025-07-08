@@ -4,6 +4,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion, useMotionValue, animate } from 'framer-motion';
 import Image from 'next/image';
+import { useThemeChange } from '../End/ThemeChangeContext';
 
 const NavBarAll = () => {
     const [isVisible, setIsVisible] = useState(true);
@@ -74,6 +75,8 @@ const NavBarAll = () => {
         setMenuOpen(prev => !prev);
     };
 
+    const { isThemeDark, setIsThemeDark } = useThemeChange();
+
     return (
         <div>
             <div
@@ -85,7 +88,7 @@ const NavBarAll = () => {
                     onClick={handleClick}
                     className="rounded-full flex items-center justify-center gap-1 cursor-pointer hover:scale-110 transition-[all_1s_ease-in-out] active:scale-95"
                 >
-                    <span className="text-white font-semibold font-[kanit] md:text-[2.2rem] text-[1.5rem]">
+                    <span className={`${isThemeDark ? "text-white" : "text-black"} font-semibold font-[kanit] md:text-[2.2rem] text-[1.5rem]`}>
                         Git
                     </span>
                     <span className="text-[#a200ff] font-bold font-[kanit] md:text-[2.2rem] text-[1.5rem]">
@@ -209,7 +212,7 @@ const NavBarAll = () => {
                 </div>
 
                 <div className='md:flex hidden items-center justify-center gap-4 cursor-pointer'>
-                    <div className='text-lg text-white font-semibold' onClick={() => handleNavigation('')}>
+                    <div className={`text-lg ${isThemeDark ? "text-white" : "text-black"} font-semibold`} onClick={() => handleNavigation('')}>
                         Register
                     </div>
                     <div className='text-md py-2 px-6 bg-[#a200ff] text-[#f3f3f3] font-semibold rounded-lg' onClick={() => handleNavigation('')}>

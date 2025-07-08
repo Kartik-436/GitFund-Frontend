@@ -6,12 +6,15 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { motion } from 'framer-motion';
 import EndPage from './EndPage';
 import ThemeChange from './ThemeChange';
+import { useThemeChange } from './ThemeChangeContext';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const LastPortal = () => {
     const MaskRef = useRef(null);
     const containerRef = useRef(null);
+
+    const { isThemeDark, setIsThemeDark } = useThemeChange();
 
     useEffect(() => {
         const tl = gsap.timeline({
@@ -21,12 +24,23 @@ const LastPortal = () => {
                 end: '+=1000', // adjust based on how much scroll you want
                 scrub: true,
                 pin: true,
+                onUpdate: (self) => {
+                    const progress = self.progress;
+                    if (progress > 0.63) {
+                        setIsThemeDark(false); // fully scrolled
+                    } else {
+                        setIsThemeDark(true); // scrolled back
+                    }
+                }
             },
         });
 
         tl.to(MaskRef.current, {
             maskSize: "1700px",
-            ease: "power3.inOut"
+            ease: "power3.inOut",
+            // onComplete: () => {
+            //     setIsThemeDark(false);
+            // }
         });
 
         // tl.to(MaskRef.current, {

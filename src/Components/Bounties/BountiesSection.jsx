@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import InfiniteMenu from './InfiniteMenu';
 import DotGrid from '../WhyChoose/DotGridBackground';
 import Image from 'next/image';
@@ -12,6 +12,8 @@ import {
     IconSignature,
     IconTableColumn,
 } from "@tabler/icons-react";
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/all';
 
 // const BountiesSection = () => {
 //     const items = [
@@ -89,11 +91,20 @@ import {
 
 // export default BountiesSection
 
+gsap.registerPlugin(ScrollTrigger);
 
 function BentoGridDemo() {
+    const Headref = useRef(null)
+    const imgref = useRef(null)
+    const btnref = useRef(null)
+
+    useEffect(() => {
+
+    }, [])
+
     return (
         <div id='bounties' className='min-h-[150vh] h-full relative flex flex-col gap-[10vh] items-center py-[20vh] justify-center'>
-            <div className='flex flex-col gap-3 w-full items-start px-[10vw]'>
+            <div ref={Headref} className='flex flex-col gap-3 w-full items-start px-[10vw]'>
                 <h1 className='text-[8vw] font-bold leading-0 text-shadow-white text-white'>
                     Popular
                 </h1>
@@ -102,7 +113,7 @@ function BentoGridDemo() {
                 </h1>
             </div>
 
-            <div className='absolute top-[37vh] left-[16.2vw] rotate-90'>
+            <div ref={imgref} className='absolute top-[37vh] left-[16.2vw] rotate-90'>
                 <Image src={"/arrow.png"} height={90} width={120} alt='Arrow Image' />
             </div>
 
@@ -119,7 +130,7 @@ function BentoGridDemo() {
                     ))}
                 </BentoGrid>
 
-                <div className='w-full pr-[12vw] flex items-end justify-end'>
+                <div ref={btnref} className='w-full pr-[12vw] flex items-end justify-end'>
                     <button className='text-white text-xl rounded-full px-13 py-7 bg-[#a600ff] cursor-pointer'>
                         View More
                     </button>
