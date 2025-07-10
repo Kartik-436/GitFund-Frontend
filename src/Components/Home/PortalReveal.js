@@ -25,7 +25,7 @@ const MaskedPage = () => {
             scrollTrigger: {
                 trigger: containerRef.current,
                 start: 'top top',
-                end: '+=1200', // adjust based on how much scroll you want
+                end: '+=1300', // adjust based on how much scroll you want
                 scrub: 1,
                 pin: true,
             },
@@ -58,11 +58,11 @@ const MaskedPage = () => {
 
         tl.to(Textref1.current, {
             opacity: 0
-        }, "0.5")
+        }, "0.8")
 
         tl.to(Textref2.current, {
             opacity: 0
-        }, "1.2")
+        }, "2")
 
         tl.fromTo(Textref2.current,
             {
@@ -71,7 +71,7 @@ const MaskedPage = () => {
             }, {
             opacity: 1,
             x: 0
-        }, "0.5")
+        }, "1")
 
         tl.fromTo(Textref1.current,
             {
@@ -89,7 +89,7 @@ const MaskedPage = () => {
             scale: 0.2,
             z: 100,
             zIndex: 55,
-        }, "1.2")
+        }, "2")
 
         tl.to(MaskRef.current, {
             maskSize: "2000px",

@@ -3,6 +3,7 @@ import DotGrid from './DotGridBackground'
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import { anticipate, easeInOut } from 'framer-motion';
+import MobileWhyChoose from './MobileWhyChoose';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -165,10 +166,6 @@ const WhyChoosePage = () => {
     }, [])
 
     useEffect(() => {
-        const isLargeScreen = window.matchMedia('(min-width: 768px)').matches;
-
-        if (!isLargeScreen) return; // Skip animation for small screens (mobiles)
-
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: Container2.current,
@@ -297,214 +294,222 @@ const WhyChoosePage = () => {
 
     }, [])
 
-    return (
-        <div id='how-it-works' className='w-full h-[400vh] relative items-center justify-center m-0 p-0 flex'>
+    const isLargeScreen = window.matchMedia('(min-width: 768px)').matches;
 
-            <PurpleSphere
-                sphereRef={Sphere}
-                top="150"
-                left="550"
-                width="400px"
-                height="500px"
-            />
+    if (isLargeScreen) {
+        return (
+            <div id='how-it-works' className='w-full h-[400vh] relative items-center justify-center m-0 p-0 flex'>
 
-            <div className='w-full h-full min-h-screen relative'>
-                <DotGrid
-                    dotSize={2}
-                    gap={19}
-                    baseColor="#ffffff50"
-                    activeColor="#9D00FF"
-                    proximity={150}
-                    shockRadius={300}
-                    shockStrength={7}
-                    resistance={800}
-                    returnDuration={1.5}
+                <PurpleSphere
+                    sphereRef={Sphere}
+                    top="150"
+                    left="550"
+                    width="400px"
+                    height="500px"
                 />
-            </div>
 
-            <div ref={Text} className='absolute z-50 top-15'>
-                <div className='flex flex-col gap-5'>
-                    <div className='text-[#FFEE00] flex text-[2.5vw] md:text-xs justify-evenly w-screen items-center font-light'>
-                        <p>ALL-IN-ONE TOOL</p>
-                        <p>SINGLE PLATFORM</p>
-                        <p>PERFECT ORGANISED</p>
-                        <p>AUTOMATIC PROCESSES</p>
-                    </div>
-
-                    <div className='flex items-center justify-center w-full'>
-                        <h1 className='text-center font-semibold text-[8vw] leading-10 md:leading-32 max-w-[50vw] text-[white] w-full'>Why choose GITFUND</h1>
-                    </div>
+                <div className='w-full h-full min-h-screen relative'>
+                    <DotGrid
+                        dotSize={2}
+                        gap={19}
+                        baseColor="#ffffff50"
+                        activeColor="#9D00FF"
+                        proximity={150}
+                        shockRadius={300}
+                        shockStrength={7}
+                        resistance={800}
+                        returnDuration={1.5}
+                    />
                 </div>
-            </div>
 
-            <div ref={Container} style={{ perspective: "1000px" }} className='absolute top-23 md:top-63'>
-                <div style={{ perspective: "1000px" }} className="grid-fade-wrapper">
-                    <div ref={Grid} className='bg-[#0F1013] h-[60vh] md:h-[110vh] w-[80vw] md:w-[58vw] border-2 border-[#bebebe27] rounded-xl grid gap-1.5 p-1 grid-cols-5 grid-rows-5 rotate-x-[55deg]'>
-
-                        <div className='rounded-md border-2 border-[#bebebe27]'>
-
+                <div ref={Text} className='absolute z-50 top-15'>
+                    <div className='flex flex-col gap-5'>
+                        <div className='text-[#FFEE00] flex text-[2.5vw] md:text-xs justify-evenly w-screen items-center font-light'>
+                            <p>ALL-IN-ONE TOOL</p>
+                            <p>SINGLE PLATFORM</p>
+                            <p>PERFECT ORGANISED</p>
+                            <p>AUTOMATIC PROCESSES</p>
                         </div>
 
-                        <div className='rounded-md border-2 border-[#bebebe27]'>
-
-                        </div>
-
-                        <div className='rounded-md border-2 border-[#bebebe27]'>
-
-                        </div>
-
-                        <div className='rounded-md border-2 border-[#bebebe27]'>
-
-                        </div>
-
-                        <div className='rounded-md'>
-
-                        </div>
-
-                        <div className='rounded-md'>
-
-                        </div>
-
-                        <div className='rounded-md border-2 border-[#bebebe27]'>
-
-                        </div>
-
-                        <div className='rounded-md'>
-
-                        </div>
-
-                        <div className='rounded-md border-2 border-[#bebebe27]'>
-
-                        </div>
-
-                        <div className='rounded-md border-2 border-[#bebebe27]'>
-
-                        </div>
-
-                        <div className='rounded-md border-2 border-[#bebebe27]'>
-
-                        </div>
-
-                        <div className='rounded-md border-2 border-[#bebebe27]'>
-
-                        </div>
-
-                        <div className='rounded-md border-2 border-[#bebebe27]'>
-
-                        </div>
-
-                        <div className='rounded-md border-2 border-[#bebebe27]'>
-
-                        </div>
-
-                        <div className='rounded-md border-2 border-[#bebebe27]'>
-
-                        </div>
-
-                        <div className='rounded-md border-2 border-[#bebebe27]'>
-
-                        </div>
-
-                        <div className='rounded-md'>
-
-                        </div>
-
-                        <div className='rounded-md border-2 border-[#bebebe27]'>
-
-                        </div>
-
-                        <div className='rounded-md border-2 border-[#bebebe27]'>
-
-                        </div>
-
-                        <div className='rounded-md'>
-
-                        </div>
-
-                        <div className='rounded-md'>
-
-                        </div>
-
-                        <div className='rounded-md border-2 border-[#bebebe27]'>
-
-                        </div>
-
-                        <div className='rounded-md border-2 border-[#bebebe27]'>
-
-                        </div>
-
-                        <div className='rounded-md'>
-
-                        </div>
-
-                        <div className='rounded-md border-2 border-[#bebebe27]'>
-
+                        <div className='flex items-center justify-center w-full'>
+                            <h1 className='text-center font-semibold text-[8vw] leading-10 md:leading-32 max-w-[50vw] text-[white] w-full'>Why choose GITFUND</h1>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div ref={Container2} style={{ perspective: "1000px" }} className='absolute top-23 md:top-63'>
-                <div style={{ perspective: "1000px" }} className="grid-fade-wrapper2">
-                    <div ref={Grid2} className='bg-transparent h-[60vh] md:h-[110vh] w-[80vw] md:w-[58vw] rounded-xl grid gap-1.5 p-1 grid-cols-5 grid-rows-5 rotate-x-[55deg]'>
+                <div ref={Container} style={{ perspective: "1000px" }} className='absolute top-23 md:top-63'>
+                    <div style={{ perspective: "1000px" }} className="grid-fade-wrapper">
+                        <div ref={Grid} className='bg-[#0F1013] h-[60vh] md:h-[110vh] w-[80vw] md:w-[58vw] border-2 border-[#bebebe27] rounded-xl grid gap-1.5 p-1 grid-cols-5 grid-rows-5 rotate-x-[55deg]'>
 
-                        <div className=''></div>
-                        <div className=''></div>
-                        <div className=''></div>
-                        <div className=''></div>
+                            <div className='rounded-md border-2 border-[#bebebe27]'>
 
-                        <div ref={GE1} className='rounded-md border-2 bg-[#bb1bfa]'>
-                            1
+                            </div>
+
+                            <div className='rounded-md border-2 border-[#bebebe27]'>
+
+                            </div>
+
+                            <div className='rounded-md border-2 border-[#bebebe27]'>
+
+                            </div>
+
+                            <div className='rounded-md border-2 border-[#bebebe27]'>
+
+                            </div>
+
+                            <div className='rounded-md'>
+
+                            </div>
+
+                            <div className='rounded-md'>
+
+                            </div>
+
+                            <div className='rounded-md border-2 border-[#bebebe27]'>
+
+                            </div>
+
+                            <div className='rounded-md'>
+
+                            </div>
+
+                            <div className='rounded-md border-2 border-[#bebebe27]'>
+
+                            </div>
+
+                            <div className='rounded-md border-2 border-[#bebebe27]'>
+
+                            </div>
+
+                            <div className='rounded-md border-2 border-[#bebebe27]'>
+
+                            </div>
+
+                            <div className='rounded-md border-2 border-[#bebebe27]'>
+
+                            </div>
+
+                            <div className='rounded-md border-2 border-[#bebebe27]'>
+
+                            </div>
+
+                            <div className='rounded-md border-2 border-[#bebebe27]'>
+
+                            </div>
+
+                            <div className='rounded-md border-2 border-[#bebebe27]'>
+
+                            </div>
+
+                            <div className='rounded-md border-2 border-[#bebebe27]'>
+
+                            </div>
+
+                            <div className='rounded-md'>
+
+                            </div>
+
+                            <div className='rounded-md border-2 border-[#bebebe27]'>
+
+                            </div>
+
+                            <div className='rounded-md border-2 border-[#bebebe27]'>
+
+                            </div>
+
+                            <div className='rounded-md'>
+
+                            </div>
+
+                            <div className='rounded-md'>
+
+                            </div>
+
+                            <div className='rounded-md border-2 border-[#bebebe27]'>
+
+                            </div>
+
+                            <div className='rounded-md border-2 border-[#bebebe27]'>
+
+                            </div>
+
+                            <div className='rounded-md'>
+
+                            </div>
+
+                            <div className='rounded-md border-2 border-[#bebebe27]'>
+
+                            </div>
                         </div>
-
-                        <div ref={GE2} className='rounded-md border-2 bg-[#bb1bfa]'>
-                            2
-                        </div>
-
-                        <div className=''></div>
-
-                        <div ref={GE3} className='rounded-md border-2 bg-[#bb1bfa]'>
-                            3
-                        </div>
-
-                        <div className=''></div>
-                        <div className=''></div>
-                        <div className=''></div>
-                        <div className=''></div>
-                        <div className=''></div>
-                        <div className=''></div>
-                        <div className=''></div>
-                        <div className=''></div>
-
-                        <div ref={GE4} className='rounded-md border-2 bg-[#bb1bfa]'>
-                            4
-                        </div>
-
-                        <div className=''></div>
-                        <div className=''></div>
-
-                        <div ref={GE5} className='rounded-md border-2 bg-[#bb1bfa]'>
-                            5
-                        </div>
-
-                        <div ref={GE6} className='rounded-md border-2 bg-[#bb1bfa]'>
-                            6
-                        </div>
-
-                        <div className=''></div>
-                        <div className=''></div>
-
-                        <div ref={GE7} className='rounded-md border-2 bg-[#bb1bfa]'>
-                            7
-                        </div>
-
-                        <div className=''></div>
                     </div>
                 </div>
-            </div>
 
-        </div>
-    )
+                <div ref={Container2} style={{ perspective: "1000px" }} className='absolute top-23 md:top-63'>
+                    <div style={{ perspective: "1000px" }} className="grid-fade-wrapper2">
+                        <div ref={Grid2} className='bg-transparent h-[60vh] md:h-[110vh] w-[80vw] md:w-[58vw] rounded-xl grid gap-1.5 p-1 grid-cols-5 grid-rows-5 rotate-x-[55deg]'>
+
+                            <div className=''></div>
+                            <div className=''></div>
+                            <div className=''></div>
+                            <div className=''></div>
+
+                            <div ref={GE1} className='rounded-md border-2 bg-[#bb1bfa]'>
+                                1
+                            </div>
+
+                            <div ref={GE2} className='rounded-md border-2 bg-[#bb1bfa]'>
+                                2
+                            </div>
+
+                            <div className=''></div>
+
+                            <div ref={GE3} className='rounded-md border-2 bg-[#bb1bfa]'>
+                                3
+                            </div>
+
+                            <div className=''></div>
+                            <div className=''></div>
+                            <div className=''></div>
+                            <div className=''></div>
+                            <div className=''></div>
+                            <div className=''></div>
+                            <div className=''></div>
+                            <div className=''></div>
+
+                            <div ref={GE4} className='rounded-md border-2 bg-[#bb1bfa]'>
+                                4
+                            </div>
+
+                            <div className=''></div>
+                            <div className=''></div>
+
+                            <div ref={GE5} className='rounded-md border-2 bg-[#bb1bfa]'>
+                                5
+                            </div>
+
+                            <div ref={GE6} className='rounded-md border-2 bg-[#bb1bfa]'>
+                                6
+                            </div>
+
+                            <div className=''></div>
+                            <div className=''></div>
+
+                            <div ref={GE7} className='rounded-md border-2 bg-[#bb1bfa]'>
+                                7
+                            </div>
+
+                            <div className=''></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        )
+    } else {
+        return (
+            <MobileWhyChoose />
+        )
+    }
 }
 
 export default WhyChoosePage
