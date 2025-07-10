@@ -296,7 +296,20 @@ const WhyChoosePage = () => {
 
     }, [])
 
-    const isLargeScreen = window.matchMedia('(min-width: 768px)').matches;
+    const [isLargeScreen, setIsLargeScreen] = useState(null); // null initially
+
+    useEffect(() => {
+        const checkSize = () => {
+            setIsLargeScreen(window.matchMedia('(min-width: 768px)').matches);
+        };
+
+        checkSize(); // run on mount
+        window.addEventListener('resize', checkSize); // update on resize
+
+        return () => window.removeEventListener('resize', checkSize);
+    }, []);
+
+    if (isLargeScreen === null) return null; // SSR-safe initial render
 
     if (isLargeScreen) {
         return (
