@@ -1,10 +1,12 @@
 /* eslint-disable no-unused-vars */
 'use client';
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { motion, useMotionValue, animate } from 'framer-motion';
 import Image from 'next/image';
 import { useThemeChange } from '../End/ThemeChangeContext';
+import gsap from 'gsap';
+import NeowareLogo from './RotatingLogo';
 
 const NavBarAll = () => {
     const [isVisible, setIsVisible] = useState(true);
@@ -77,6 +79,63 @@ const NavBarAll = () => {
 
     const { isThemeDark, setIsThemeDark } = useThemeChange();
 
+    const AnimatedLogoText = () => {
+        const textRef = useRef();
+        const [spinDirection, setSpinDirection] = useState('clockwise');
+
+        useLayoutEffect(() => {
+            const tl = gsap.timeline({ repeat: -1, repeatDelay: 4 });
+
+            tl.to(textRef.current, {
+                xPercent: -130,
+                duration: 1.6,
+                ease: 'power2.inOut',
+                onStart: () => setSpinDirection('anticlockwise'),
+            })
+                .to(textRef.current, {
+                    xPercent: 0,
+                    duration: 1,
+                    ease: 'power2.inOut',
+                })
+                .to(textRef.current, {
+                    xPercent: 130,
+                    duration: 1.6,
+                    ease: 'power2.inOut',
+                    onStart: () => setSpinDirection('clockwise'),
+                    delay: 4,
+                })
+                .to(textRef.current, {
+                    xPercent: 0,
+                    duration: 1,
+                    ease: 'power2.inOut',
+                });
+
+            return () => tl.kill();
+        }, []);
+
+        return (
+            <div className='w-full h-full flex items-center justify-start'>
+                <div>
+                    <NeowareLogo
+                        width={60}
+                        height={60}
+                        size={2.2}
+                        speed={0.08}
+                        direction={spinDirection}
+                    />
+                </div>
+                <div className='overflow-hidden'>
+                    <h1
+                        ref={textRef}
+                        className='text-white text-2xl text-center font-semibold scale-y-120 font-[Poppins]'
+                    >
+                        neoware
+                    </h1>
+                </div>
+            </div>
+        );
+    };
+
     return (
         <div>
             <div
@@ -88,14 +147,16 @@ const NavBarAll = () => {
                     onClick={handleClick}
                     className="rounded-full flex items-center justify-center gap-1 cursor-pointer hover:scale-110 transition-[all_1s_ease-in-out] active:scale-95"
                 >
-                    <span className={`${isThemeDark ? "text-white" : "text-black"} font-semibold font-[kanit] md:text-[2.2rem] text-[1.5rem]`}>
+                    {/* <span className={`${isThemeDark ? "text-white" : "text-black"} font-semibold font-[kanit] md:text-[2.2rem] text-[1.5rem]`}>
                         Git
                     </span>
                     <span className="text-[#a200ff] font-bold font-[kanit] md:text-[2.2rem] text-[1.5rem]">
                         Fund
                     </span>
 
-                    {/* <Image alt="Font Image" src="/FONT-1.png" width={200} height={200} /> */}
+                    <Image alt="Font Image" src="/FONT-1.png" width={200} height={200} /> */}
+
+                    <AnimatedLogoText />
                 </div>
 
                 {/* Mobile Nav - Burger Menu */}

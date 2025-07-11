@@ -1,12 +1,15 @@
 /* eslint-disable no-unused-vars */
 'use client';
 
-import React, { useEffect, useRef, useState } from 'react';
-import { motion, useMotionValue, animate } from 'framer-motion';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { motion, useMotionValue, animate, useAnimation } from 'framer-motion';
 import Image from 'next/image';
 import { useThemeChange } from '../End/ThemeChangeContext';
+import NeowareLogo from './RotatingLogo';
+import gsap from 'gsap';
+import FlipLink from './FlipLinks';
 
-const NavBarAll = () => {
+const NavBar3 = () => {
     const [isVisible, setIsVisible] = useState(true);
     const lastScrollY = useRef(0);
     const NavBarC = useRef(null);
@@ -77,25 +80,70 @@ const NavBarAll = () => {
 
     const { isThemeDark, setIsThemeDark } = useThemeChange();
 
+    const AnimatedLogoText = () => {
+        const textRef = useRef();
+        const [spinDirection, setSpinDirection] = useState('clockwise');
+
+        useLayoutEffect(() => {
+            const tl = gsap.timeline({ repeat: -1, repeatDelay: 4 });
+
+            tl.to(textRef.current, {
+                xPercent: -130,
+                duration: 1.6,
+                ease: 'power2.inOut',
+                onStart: () => setSpinDirection('anticlockwise'),
+            })
+                .to(textRef.current, {
+                    xPercent: 0,
+                    duration: 1,
+                    ease: 'power2.inOut',
+                })
+                .to(textRef.current, {
+                    xPercent: 130,
+                    duration: 1.6,
+                    ease: 'power2.inOut',
+                    onStart: () => setSpinDirection('clockwise'),
+                    delay: 4,
+                })
+                .to(textRef.current, {
+                    xPercent: 0,
+                    duration: 1,
+                    ease: 'power2.inOut',
+                });
+
+            return () => tl.kill();
+        }, []);
+
+        return (
+            <div className='w-full h-full flex items-center justify-start'>
+                <div>
+                    <NeowareLogo
+                        width={60}
+                        height={60}
+                        size={2.2}
+                        speed={0.08}
+                        direction={spinDirection}
+                    />
+                </div>
+                <div className='overflow-hidden'>
+                    <h1
+                        ref={textRef}
+                        className='text-white text-2xl text-center font-semibold scale-y-120 font-[Poppins]'
+                    >
+                        neoware
+                    </h1>
+                </div>
+            </div>
+        );
+    };
+
     return (
         <div>
             <div
                 ref={NavBarC}
-                className={`h-[12vh] z-[9999] w-screen fixed top-[10px] md:top-4 left-0 pl-9 md:px-16 flex items-center justify-between transition-transform duration-500 ${isVisible ? 'translate-y-0' : '-translate-y-[150%]'
+                className={`h-[12vh] z-[9999] w-screen fixed top-[10px] md:top-4 left-0 pl-8 md:px-16 flex items-center justify-center transition-transform duration-500 ${isVisible ? 'translate-y-0' : '-translate-y-[150%]'
                     }`}
             >
-                {/* <div
-                    onClick={handleClick}
-                    className="rounded-full flex items-center justify-center gap-1 cursor-pointer hover:scale-110 transition-[all_1s_ease-in-out] active:scale-95"
-                >
-                    <span className={`${isThemeDark ? "text-white" : "text-black"} font-semibold font-[kanit] md:text-[2.2rem] text-[1.5rem]`}>
-                        Git
-                    </span>
-                    <span className="text-[#a200ff] font-bold font-[kanit] md:text-[2.2rem] text-[1.5rem]">
-                        Fund
-                    </span>
-                </div> */}
-
                 {/* Mobile Nav - Burger Menu */}
                 <div className="md:hidden fixed top-6 right-5 z-[100]">
                     <motion.div
@@ -176,9 +224,34 @@ const NavBarAll = () => {
                         </div>
                     </div>
                 </motion.div>
+
+                <div className='md:hidden flex w-full items-center justify-start'>
+                    <AnimatedLogoText />
+                </div>
+
+                <div className='min-w-[65%] min-h-[9vh] bg-[#09090b81] px-5 py-2 rounded-full border-[#ffffff88] border-[1.2px] md:flex hidden items-center justify-between gap-10'>
+                    <AnimatedLogoText />
+
+                    <div className='w-full h-full flex items-center gap-10 text-center'>
+                        <FlipLink children={"How it Works"} size={"text-md"} color={"text-white"} />
+                        <FlipLink children={"Bounties"} size={"text-md"} color={"text-white"} />
+                        <FlipLink children={"Customers"} size={"text-md"} color={"text-white"} />
+                        <FlipLink children={"Dashboard"} size={"text-md"} color={"text-white"} />
+                    </div>
+
+                    <div className='w-full h-full flex items-center justify-end gap-3'>
+                        <div className='px-5 py-2 rounded-full font-semibold text-nowrap text-black bg-[#fff] shadow-[0_0_15px_5px] shadow-[#fff] cursor-pointer' onClick={() => handleNavigation('')}>
+                            Log In
+                        </div>
+
+                        <div className='px-5 py-2 rounded-full font-semibold text-nowrap text-white bg-[#a200ff] shadow-[0_0_15px_5px] shadow-[#a200ff] cursor-pointer' onClick={() => handleNavigation('')}>
+                            Sign Up
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     );
 };
 
-export default NavBarAll;
+export default NavBar3;
