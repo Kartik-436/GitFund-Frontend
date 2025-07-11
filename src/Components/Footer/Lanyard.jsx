@@ -8,7 +8,7 @@ import { MeshLineGeometry, MeshLineMaterial } from 'meshline';
 
 // replace with your own imports, see the usage snippet for details
 const cardGLB = "/card.glb";
-const lanyard = "/lanyard.png";
+const lanyard = "/NeowareLogo1.png";
 
 import * as THREE from 'three';
 
@@ -171,7 +171,7 @@ function Band({ maxSpeed = 50, minSpeed = 0 }) {
           useMap
           map={texture}
           repeat={[-4, 1]}
-          lineWidth={1}
+          lineWidth={4}
         />
       </mesh>
     </>

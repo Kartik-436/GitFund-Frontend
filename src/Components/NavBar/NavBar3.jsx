@@ -128,9 +128,9 @@ const NavBar3 = () => {
                 <div className='overflow-hidden'>
                     <h1
                         ref={textRef}
-                        className='text-white text-2xl text-center font-semibold scale-y-120 font-[Poppins]'
+                        className={`${isThemeDark ? 'text-white' : 'text-black'} text-2xl text-center font-semibold scale-y-120 font-[Poppins]`}
                     >
-                        neoware
+                        neoweave
                     </h1>
                 </div>
             </div>
@@ -229,22 +229,22 @@ const NavBar3 = () => {
                     <AnimatedLogoText />
                 </div>
 
-                <div className='min-w-[65%] min-h-[9vh] bg-[#09090b81] px-5 py-2 rounded-full border-[#ffffff88] border-[1.2px] md:flex hidden items-center justify-between gap-10'>
+                <div className={`min-w-[65%] min-h-[9vh] ${isThemeDark ? "bg-[#09090b81]" : "bg-[#ffffff81]"} px-5 py-2 rounded-full border-[#ffffff88] border-[1.2px] md:flex hidden items-center justify-between gap-12`}>
                     <AnimatedLogoText />
 
-                    <div className='w-full h-full flex items-center gap-10 text-center'>
-                        <FlipLink children={"How it Works"} size={"text-md"} color={"text-white"} />
-                        <FlipLink children={"Bounties"} size={"text-md"} color={"text-white"} />
-                        <FlipLink children={"Customers"} size={"text-md"} color={"text-white"} />
-                        <FlipLink children={"Dashboard"} size={"text-md"} color={"text-white"} />
+                    <div className={`w-full h-full flex items-center gap-10 text-center ${isThemeDark ? 'text-white' : 'text-black'}`}>
+                        <FlipLink children={"How it Works"} size={"text-md"} />
+                        <FlipLink children={"Bounties"} size={"text-md"} />
+                        <FlipLink children={"Customers"} size={"text-md"} />
+                        <FlipLink children={"Dashboard"} size={"text-md"} />
                     </div>
 
                     <div className='w-full h-full flex items-center justify-end gap-3'>
-                        <div className='px-5 py-2 rounded-full font-semibold text-nowrap text-black bg-[#fff] shadow-[0_0_15px_5px] shadow-[#fff] cursor-pointer' onClick={() => handleNavigation('')}>
+                        <div className={`px-5 py-2 rounded-full font-semibold text-nowrap ${isThemeDark ? 'text-black bg-white' : 'text-white bg-black'} shadow-[0_0_20px_2px] shadow-[#fff] cursor-pointer`} onClick={() => handleNavigation('')}>
                             Log In
                         </div>
 
-                        <div className='px-5 py-2 rounded-full font-semibold text-nowrap text-white bg-[#a200ff] shadow-[0_0_15px_5px] shadow-[#a200ff] cursor-pointer' onClick={() => handleNavigation('')}>
+                        <div className='px-5 py-2 rounded-full font-semibold text-nowrap text-white bg-[#a200ff] shadow-[0_0_20px_2px] shadow-[#a200ff] cursor-pointer' onClick={() => handleNavigation('')}>
                             Sign Up
                         </div>
                     </div>

@@ -84,7 +84,7 @@ const Footer = () => {
             </div>
 
             <div className='absolute right-0 w-[30vw] top-[-30vh] h-screen hidden md:flex items-end z-50 justify-end'>
-                <Lanyard position={[0, 0, 23]} gravity={[0, -60, 0]} />
+                <Lanyard position={[0, 0, 22]} gravity={[0, -60, 0]} />
             </div>
 
             <div className='absolute right-0 w-[35vw] top-[-25vh] h-screen md:hidden flex items-end z-50 justify-end'>
@@ -95,8 +95,8 @@ const Footer = () => {
                 <PurpleSphere width='110px' height='110px' />
             </div> */}
 
-            <div className='z-10 absolute md:bottom-[21vh] bottom-[5vh] leading-0 w-full'>
-                <h1 className='text-black text-[26vw] z-50 font-bold font-[Barlow] text-center w-full'>neoware</h1>
+            <div className='z-10 absolute md:bottom-[18vh] bottom-[3vh] leading-0 w-full'>
+                <h1 className='text-black text-[22vw] z-50 font-bold font-[Barlow] text-center w-full'>neoweave</h1>
                 {/*parkinsans, Barlow, Montserrat, Raleway, */}
 
                 {/* <Image alt="Font Image" src="/gitlogo.svg" width={2000} height={2000} /> */}

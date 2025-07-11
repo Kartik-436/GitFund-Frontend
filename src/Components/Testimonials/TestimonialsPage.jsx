@@ -56,7 +56,7 @@ const TestimonialsPage = () => {
                         Loved by business and developers across the planet
                     </h1>
                     <p className='text-neutral-400 text-sm md:text-md font-semibold'>
-                        Here's what people are saying about GitFund
+                        Here's what people are saying about Neoweave
                     </p>
                 </div>
                 <InfiniteMovingCardsDemo />

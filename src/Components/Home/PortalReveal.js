@@ -155,8 +155,8 @@ const MaskedPage = () => {
                         </div>
 
                         <div ref={Textref1} className='absolute flex flex-col gap-5 items-start p-5 md:left-[48vw] md:max-w-[44vw] z-50 top-50 opacity-0 left-[5vw] max-w-[90vw]'>
-                            <h1 className='md:text-[4.4vw] text-[12vw] text-transparent bg-clip-text bg-gradient-to-r from-[#C1C1DF] from-55% to-[#333352] to-95% font-[Lato] font-semibold text-nowrap'>What is gitfund?</h1>
-                            <p className='md:text-[1.1vw] text-[4vw] text-[#ffffff] font-[inter]'>GitFund is a blockchain platform that connects open-source software development with decentralized finance (DeFi), creating a trustless bounty system for code contributions and help solve real life problems by allowing connectivity and seamless transactions between developers all over the globe.</p>
+                            <h1 className='md:text-[4.4vw] text-[12vw] text-transparent bg-clip-text bg-gradient-to-r from-[#C1C1DF] from-55% to-[#333352] to-95% font-[Lato] font-semibold text-nowrap'>What is Neoweave?</h1>
+                            <p className='md:text-[1.1vw] text-[4vw] text-[#ffffff] font-[inter]'>Neoweave is a blockchain platform that connects open-source software development with decentralized finance (DeFi), creating a trustless bounty system for code contributions and help solve real life problems by allowing connectivity and seamless transactions between developers all over the globe.</p>
                         </div>
 
                         <div ref={Textref2} className='absolute left-[10vw] md:max-w-[44vw] flex flex-col gap-6 z-50 top-50 opacity-0'>

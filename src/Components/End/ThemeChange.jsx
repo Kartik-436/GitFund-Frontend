@@ -109,7 +109,7 @@ const InfiniteScroller = () => {
                             key={i}
                             className='md:text-[6vw] text-[15vw] font-semibold flex items-end justify-center gap-5'
                         >
-                            <p>GitFund is Built Different</p>
+                            <p>Neoweave is Built Different</p>
                             <PurpleSphere width='120px' height='110px' />
                         </li>
                     ))}
