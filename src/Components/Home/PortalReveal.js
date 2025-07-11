@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { motion } from 'framer-motion';
@@ -20,7 +20,34 @@ const MaskedPage = () => {
     const Textref1 = useRef(null);
     const Textref2 = useRef(null);
 
+    const [introDone, setIntroDone] = useState(false);
+
     useEffect(() => {
+        // const loadTl = gsap.timeline();
+
+        // loadTl.fromTo(Sphere.current, {
+        //     y: 500,
+        //     opacity: 0,
+        //     scale: 0.5
+        // }, {
+        //     y: 0,
+        //     opacity: 1,
+        //     scale: 1,
+        //     duration: 1.2,
+        //     ease: "power3.out"
+        // });
+
+        // loadTl.fromTo(contentRef.current, {
+        //     y: -200,
+        //     opacity: 0
+        // }, {
+        //     y: 0,
+        //     opacity: 1,
+        //     duration: 1,
+        //     ease: "power3.out"
+        // }, "-=0.8");
+        if (!introDone) return;
+
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: containerRef.current,
@@ -110,7 +137,7 @@ const MaskedPage = () => {
         return () => {
             ScrollTrigger.getAll().forEach(trigger => trigger.kill());
         };
-    }, []);
+    }, [introDone]);
 
     return (
         <>
@@ -123,14 +150,22 @@ const MaskedPage = () => {
 
                 <div className='body fixed top-0 -z-10'>
                     <div style={{ perspective: "2000px" }} ref={containerRef2} className="relative w-full h-screen flex items-center justify-center overflow-hidden">
-                        <div ref={Sphere} id='SPHERE' className='relative w-full z-50 h-screen flex items-end justify-center pointer-events-none'>
+                        <motion.div
+                            ref={Sphere}
+                            id='SPHERE'
+                            initial={{ y: 500, opacity: 0, scale: 0.5 }}
+                            animate={{ y: 0, opacity: 1, scale: 1 }}
+                            transition={{ duration: 1.2, ease: "easeOut" }}
+                            onAnimationComplete={() => setIntroDone(true)}
+                            className='relative w-full z-50 h-screen flex items-end justify-center pointer-events-none'
+                        >
                             <div className="absolute top-[57%] w-[1034px] h-[1000px] rounded-full bg-[#4F46E5] border-2 border-[#4F46E5] z-10 blur-2xl " />
                             <div className="absolute top-[48%] w-[1000px] h-[1000px] rounded-full bg-[#A78BFA] border-2 border-[#A78BFA] z-[5] blur-2xl" />
                             <div className="absolute top-[65%] w-[1050px] h-[1000px] rounded-full bg-[#09090b] z-30 blur-[60px]" />
                             <div className="absolute top-[48%] w-[1020px] h-[1020px] rounded-full bg-[#A78BFA]" />
                             <div className="absolute top-[48%] w-[1010px] h-[1000px] rounded-full z-50 bg-transparent border-8 border-[#A78BFA]/50 blur-[1px]" />
                             <div className='absolute top-[84%] w-[1300px] h-[800px] rounded-full bg-black z-20 blur-[100px]'></div>
-                        </div>
+                        </motion.div>
                         <div className='absolute bg-[#4f46e5]/60 h-20 w-80 z-50 bottom-33 blur-[80px]'></div>
                         <div className='h-[25vh] rounded-full w-[66vw] bottom-60 absolute bg-[#4f46e5]/40 blur-[110px] pointer-events-none'></div>
                         <div className='h-[30vh] rounded-full w-[50vw] bottom-30 left-50 absolute bg-[#4f46e5]/40 blur-[110px] pointer-events-none'></div>
@@ -164,18 +199,25 @@ const MaskedPage = () => {
                             <p className='md:text-[1.6vw] text-[4.6vw] text-[#ffffff] font-[inter]'>Let&apos;s build the future of software—together.</p>
                         </div>
 
-                        <div ref={contentRef} className="flex flex-col gap-5 text-white absolute top-54 md:top-35 z-50 items-center justify-center pointer-events-none">
+                        <motion.div
+                            ref={contentRef}
+                            initial={{ y: -200, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            transition={{ duration: 1, ease: "easeOut", delay: 0.4 }}
+                            onAnimationComplete={() => setIntroDone(true)}
+                            className="flex flex-col gap-5 text-white absolute top-54 md:top-35 z-50 items-center justify-center pointer-events-none"
+                        >
                             <div className="md:text-[96px] text-[50px] max-w-[70vw] text-center leading-none text-transparent bg-clip-text bg-gradient-to-r from-[#C1C1DF] from-55% to-[#333352] to-95% font-[Lato] font-semibold">
                                 Earn Crypto by Solving Open Source
                             </div>
                             <p className="max-w-[70vw] text-center leading-none text-[#e5e5ee] font-[inter]">
                                 Transform your open-source impact into real earnings with fast and secure Payouts.
                             </p>
-                        </div>
+                        </motion.div>
                     </div>
                 </div>
 
-            </main>
+            </main >
         </>
     );
 };

@@ -115,7 +115,7 @@ const NavBar3 = () => {
         }, []);
 
         return (
-            <div className='w-full h-full flex items-center justify-start'>
+            <div onClick={handleClick} className='w-full h-full flex items-center justify-start cursor-pointer'>
                 <div>
                     <NeowareLogo
                         width={60}
