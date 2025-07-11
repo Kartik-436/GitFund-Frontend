@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { motion } from 'framer-motion';
@@ -19,8 +19,6 @@ const MaskedPage = () => {
     const particlesRef = useRef(null);
     const Textref1 = useRef(null);
     const Textref2 = useRef(null);
-
-    const [introDone, setIntroDone] = useState(false);
 
     useEffect(() => {
         // const loadTl = gsap.timeline();
@@ -46,7 +44,6 @@ const MaskedPage = () => {
         //     duration: 1,
         //     ease: "power3.out"
         // }, "-=0.8");
-        if (!introDone) return;
 
         const tl = gsap.timeline({
             scrollTrigger: {
@@ -137,7 +134,7 @@ const MaskedPage = () => {
         return () => {
             ScrollTrigger.getAll().forEach(trigger => trigger.kill());
         };
-    }, [introDone]);
+    }, []);
 
     return (
         <>
@@ -156,7 +153,6 @@ const MaskedPage = () => {
                             initial={{ y: 500, opacity: 0, scale: 0.5 }}
                             animate={{ y: 0, opacity: 1, scale: 1 }}
                             transition={{ duration: 1.2, ease: "easeOut" }}
-                            onAnimationComplete={() => setIntroDone(true)}
                             className='relative w-full z-50 h-screen flex items-end justify-center pointer-events-none'
                         >
                             <div className="absolute top-[57%] w-[1034px] h-[1000px] rounded-full bg-[#4F46E5] border-2 border-[#4F46E5] z-10 blur-2xl " />
@@ -204,7 +200,6 @@ const MaskedPage = () => {
                             initial={{ y: -200, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
                             transition={{ duration: 1, ease: "easeOut", delay: 0.4 }}
-                            onAnimationComplete={() => setIntroDone(true)}
                             className="flex flex-col gap-5 text-white absolute top-54 md:top-35 z-50 items-center justify-center pointer-events-none"
                         >
                             <div className="md:text-[96px] text-[50px] max-w-[70vw] text-center leading-none text-transparent bg-clip-text bg-gradient-to-r from-[#C1C1DF] from-55% to-[#333352] to-95% font-[Lato] font-semibold">
