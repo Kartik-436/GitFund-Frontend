@@ -96,7 +96,7 @@ const Footer = () => {
             </div> */}
 
             <div className='z-10 absolute md:bottom-[21vh] bottom-[5vh] leading-0 w-full'>
-                <h1 className='text-black text-[29vw] z-50 font-bold font-[Barlow] text-center w-full'>GitFund</h1>
+                <h1 className='text-black text-[26vw] z-50 font-bold font-[Barlow] text-center w-full'>neoware</h1>
                 {/*parkinsans, Barlow, Montserrat, Raleway, */}
 
                 {/* <Image alt="Font Image" src="/gitlogo.svg" width={2000} height={2000} /> */}

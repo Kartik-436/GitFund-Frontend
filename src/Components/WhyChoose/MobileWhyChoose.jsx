@@ -131,7 +131,7 @@ const MobileWhyChoose = () => {
     }, []);
 
     return (
-        <div className="w-full min-h-[500vh] relative m-0 p-0">
+        <div className="w-full min-h-[700vh] relative m-0 p-0">
             <div
                 ref={containerRef}
                 className="lg:hidden z-10 relative h-screen w-full flex items-center justify-center overflow-hidden"
