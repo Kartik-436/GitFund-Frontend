@@ -150,9 +150,9 @@ const MaskedPage = () => {
                         <motion.div
                             ref={Sphere}
                             id='SPHERE'
-                            initial={{ y: 500, opacity: 0, scale: 0.5 }}
-                            animate={{ y: 0, opacity: 1, scale: 1 }}
-                            transition={{ duration: 1.2, ease: "easeOut" }}
+                            // initial={{ y: 500, opacity: 0, scale: 0.5 }}
+                            // animate={{ y: 0, opacity: 1, scale: 1 }}
+                            // transition={{ duration: 1.2, ease: "easeOut" }}
                             className='relative w-full z-50 h-screen flex items-end justify-center pointer-events-none'
                         >
                             <div className="absolute top-[57%] w-[1034px] h-[1000px] rounded-full bg-[#4F46E5] border-2 border-[#4F46E5] z-10 blur-2xl " />
@@ -197,9 +197,9 @@ const MaskedPage = () => {
 
                         <motion.div
                             ref={contentRef}
-                            initial={{ y: -200, opacity: 0 }}
-                            animate={{ y: 0, opacity: 1 }}
-                            transition={{ duration: 1, ease: "easeOut", delay: 0.4 }}
+                            // initial={{ y: -200, opacity: 0 }}
+                            // animate={{ y: 0, opacity: 1 }}
+                            // transition={{ duration: 1, ease: "easeOut", delay: 0.4 }}
                             className="flex flex-col gap-5 text-white absolute top-54 md:top-35 z-50 items-center justify-center pointer-events-none"
                         >
                             <div className="md:text-[96px] text-[50px] max-w-[70vw] text-center leading-none text-transparent bg-clip-text bg-gradient-to-r from-[#C1C1DF] from-55% to-[#333352] to-95% font-[Lato] font-semibold">
