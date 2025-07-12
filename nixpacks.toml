@@ -1,5 +1,5 @@
 [phases.setup]
-nixPkgs = ['npm']
+nixPkgs = ['nodejs-18.x', 'npm']
 aptPkgs = ['build-essential']
 
 [phases.install]
@@ -9,4 +9,4 @@ cmds = ["npm install"]
 cmds = ["npm run build"]
 
 [start]
-cmd = "npm run start"
+run = "npm run start"
