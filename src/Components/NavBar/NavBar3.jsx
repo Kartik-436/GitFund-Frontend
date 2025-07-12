@@ -81,9 +81,24 @@ const NavBar3 = () => {
     const { isThemeDark, setIsThemeDark } = useThemeChange();
 
     const AnimatedLogoText = () => {
-        const textRef = useRef();
+        const textRef = useRef(null);
+        const speedRef = useRef({ value: 0.08 }); // must be object with `.value`
+        const speedTween = useRef(null);
+        const [speed, setSpeed] = useState(0.08);
         const [spinDirection, setSpinDirection] = useState('clockwise');
-        const [speed, setspeed] = useState(0.08);
+
+        const animateSpeedTo = (target, duration = 1) => {
+            if (speedTween.current) speedTween.current.kill();
+
+            speedTween.current = gsap.to(speedRef.current, {
+                value: target,
+                duration,
+                ease: 'power2.inOut',
+                onUpdate: () => {
+                    setSpeed(speedRef.current.value);
+                },
+            });
+        };
 
         useLayoutEffect(() => {
             const tl = gsap.timeline({ repeat: -1, repeatDelay: 4 });
@@ -93,40 +108,43 @@ const NavBar3 = () => {
                 duration: 1.6,
                 ease: 'power2.inOut',
                 onStart: () => {
-                    setSpinDirection('anticlockwise')
-                    setspeed(1)
+                    setSpinDirection('anticlockwise');
+                    animateSpeedTo(1, 0.5); // gradually speed up
                 },
             })
                 .to(textRef.current, {
                     xPercent: 0,
                     duration: 1,
                     ease: 'power2.inOut',
-                    onComplete: () => {
-                        setSpinDirection('clockwise')
-                        setspeed(0.08)
+                    onStart: () => {
+                        setSpinDirection('clockwise');
+                        animateSpeedTo(0.08, 1); // gradually slow down
                     },
                 })
                 .to(textRef.current, {
                     xPercent: 130,
                     duration: 1.6,
                     ease: 'power2.inOut',
-                    onStart: () => {
-                        setSpinDirection('clockwise')
-                        setspeed(1)
-                    },
                     delay: 4,
+                    onStart: () => {
+                        setSpinDirection('clockwise');
+                        animateSpeedTo(1, 0.5);
+                    },
                 })
                 .to(textRef.current, {
                     xPercent: 0,
                     duration: 1,
                     ease: 'power2.inOut',
-                    onComplete: () => {
-                        setSpinDirection('anticlockwise')
-                        setspeed(0.08)
+                    onStart: () => {
+                        setSpinDirection('anticlockwise');
+                        animateSpeedTo(0.08, 1);
                     },
                 });
 
-            return () => tl.kill();
+            return () => {
+                tl.kill();
+                if (speedTween.current) speedTween.current.kill();
+            };
         }, []);
 
         return (
