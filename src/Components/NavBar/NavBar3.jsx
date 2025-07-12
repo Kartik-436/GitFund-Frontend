@@ -186,7 +186,7 @@ const NavBar3 = () => {
                         animate={menuOpen ? "open" : "closed"}
                     >
                         <motion.span
-                            className="w-8 h-[2px] bg-white rounded"
+                            className={`w-8 h-[2px] ${isThemeDark ? 'bg-white' : 'bg-black'} rounded`}
                             variants={{
                                 open: { rotate: 45, y: 6 },
                                 closed: { rotate: 0, y: 0 },
@@ -194,7 +194,7 @@ const NavBar3 = () => {
                             transition={{ duration: 0.3 }}
                         />
                         <motion.span
-                            className="w-8 h-[2px] bg-white rounded"
+                            className={`w-8 h-[2px] ${isThemeDark ? 'bg-white' : 'bg-black'} rounded`}
                             variants={{
                                 open: { opacity: 0 },
                                 closed: { opacity: 1 },
@@ -202,7 +202,7 @@ const NavBar3 = () => {
                             transition={{ duration: 0.2 }}
                         />
                         <motion.span
-                            className="w-8 h-[2px] bg-white rounded"
+                            className={`w-8 h-[2px] ${isThemeDark ? 'bg-white' : 'bg-black'} rounded`}
                             variants={{
                                 open: { rotate: -45, y: -6 },
                                 closed: { rotate: 0, y: 0 },
