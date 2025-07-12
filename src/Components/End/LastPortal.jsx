@@ -36,7 +36,7 @@ const LastPortal = () => {
         });
 
         tl.to(MaskRef.current, {
-            maskSize: "1700px",
+            maskSize: "180vw",
             ease: "power3.inOut",
             // onComplete: () => {
             //     setIsThemeDark(false);

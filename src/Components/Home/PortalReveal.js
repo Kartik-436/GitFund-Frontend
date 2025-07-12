@@ -116,7 +116,7 @@ const MaskedPage = () => {
         }, "2")
 
         tl.to(MaskRef.current, {
-            maskSize: "2000px",
+            maskSize: "200vw",
             duration: 1,
             ease: "power1.inOut",
         }, "l2")

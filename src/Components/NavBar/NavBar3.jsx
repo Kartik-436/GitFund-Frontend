@@ -83,6 +83,7 @@ const NavBar3 = () => {
     const AnimatedLogoText = () => {
         const textRef = useRef();
         const [spinDirection, setSpinDirection] = useState('clockwise');
+        const [speed, setspeed] = useState(0.08);
 
         useLayoutEffect(() => {
             const tl = gsap.timeline({ repeat: -1, repeatDelay: 4 });
@@ -91,24 +92,38 @@ const NavBar3 = () => {
                 xPercent: -130,
                 duration: 1.6,
                 ease: 'power2.inOut',
-                onStart: () => setSpinDirection('anticlockwise'),
+                onStart: () => {
+                    setSpinDirection('anticlockwise')
+                    setspeed(1)
+                },
             })
                 .to(textRef.current, {
                     xPercent: 0,
                     duration: 1,
                     ease: 'power2.inOut',
+                    onComplete: () => {
+                        setSpinDirection('clockwise')
+                        setspeed(0.08)
+                    },
                 })
                 .to(textRef.current, {
                     xPercent: 130,
                     duration: 1.6,
                     ease: 'power2.inOut',
-                    onStart: () => setSpinDirection('clockwise'),
+                    onStart: () => {
+                        setSpinDirection('clockwise')
+                        setspeed(1)
+                    },
                     delay: 4,
                 })
                 .to(textRef.current, {
                     xPercent: 0,
                     duration: 1,
                     ease: 'power2.inOut',
+                    onComplete: () => {
+                        setSpinDirection('anticlockwise')
+                        setspeed(0.08)
+                    },
                 });
 
             return () => tl.kill();
@@ -121,7 +136,7 @@ const NavBar3 = () => {
                         width={60}
                         height={60}
                         size={2.2}
-                        speed={0.08}
+                        speed={speed}
                         direction={spinDirection}
                     />
                 </div>

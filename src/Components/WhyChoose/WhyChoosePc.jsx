@@ -8,8 +8,8 @@ import { ScrollTrigger } from 'gsap/all';
 gsap.registerPlugin(ScrollTrigger);
 
 const PurpleSphere = ({
-    top = '50px',       // Default top position
-    left = '50px',      // Default left position
+    top = '50px',
+    left = '50px',
     width = '200px',    // Default width
     height = '200px',   // Default height
     style = {},          // Allows for additional custom inline styles
@@ -17,9 +17,9 @@ const PurpleSphere = ({
 }) => {
     // Combine dynamic positioning/sizing with any custom styles
     const svgStyle = {
-        position: 'absolute', // Essential for 'top' and 'left' to work
-        top: top,
-        left: left,
+        // position: 'absolute', // Essential for 'top' and 'left' to work
+        // top: top,
+        // left: left,
         width: width,
         height: height,
         ...style // Merge any additional styles passed via the 'style' prop
@@ -27,8 +27,8 @@ const PurpleSphere = ({
 
     return (
         // Apply the dynamic style object to the SVG element
-        <div className='z-40'>
-            <svg ref={sphereRef} viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style={svgStyle}>
+        <div className='z-40 absolute top-36'>
+            <svg ref={sphereRef} viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" className='mx-auto' style={svgStyle}>
                 <defs>
                     {/* Radial gradient for the sphere's main color and depth */}
                     <radialGradient id="purpleSphereGradient" cx="30%" cy="30%" r="70%" fx="30%" fy="30%">
