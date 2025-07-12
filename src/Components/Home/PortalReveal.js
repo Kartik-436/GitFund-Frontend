@@ -49,11 +49,16 @@ const MaskedPage = () => {
             scrollTrigger: {
                 trigger: containerRef.current,
                 start: 'top top',
-                end: '+=1300', // adjust based on how much scroll you want
+                end: '+=1500', // adjust based on how much scroll you want
                 scrub: 1,
                 pin: true,
             },
         });
+
+        tl.to(contentRef.current, {
+            y: -500,
+            rotateX: -50,
+        }, "0.3")
 
         tl.to(Sphere.current, {
             y: -100,
@@ -63,12 +68,17 @@ const MaskedPage = () => {
             z: 100,
             zIndex: 55,
             duration: 0.2,
-        }, "0")
+        }, "0.3")
 
-        tl.to(contentRef.current, {
-            y: -500,
-            rotateX: -50,
-        }, "0")
+        tl.fromTo(Textref1.current,
+            {
+                opacity: 0,
+                x: 50
+            }, {
+            opacity: 1,
+            x: 0
+        }, "0.5")
+
 
         tl.to(Sphere.current, {
             y: -50,
@@ -78,15 +88,11 @@ const MaskedPage = () => {
             z: 100,
             zIndex: 55,
             duration: 0.5,
-        }, "0.6")
+        }, "2")
 
         tl.to(Textref1.current, {
             opacity: 0
-        }, "0.8")
-
-        tl.to(Textref2.current, {
-            opacity: 0
-        }, "2")
+        }, "1.7")
 
         tl.fromTo(Textref2.current,
             {
@@ -95,16 +101,7 @@ const MaskedPage = () => {
             }, {
             opacity: 1,
             x: 0
-        }, "1")
-
-        tl.fromTo(Textref1.current,
-            {
-                opacity: 0,
-                x: 50
-            }, {
-            opacity: 1,
-            x: 0
-        }, "0.1")
+        }, "2.2")
 
         tl.to(Sphere.current, {
             y: 60,
@@ -113,19 +110,23 @@ const MaskedPage = () => {
             scale: 0.2,
             z: 100,
             zIndex: 55,
-        }, "2")
+        }, "3.5")
+
+        tl.to(Textref2.current, {
+            opacity: 0
+        }, "3.5")
 
         tl.to(MaskRef.current, {
             maskSize: "300vh",
             duration: 1,
             ease: "power1.inOut",
-        }, "l2")
+        }, "4.2")
 
         tl.to(Sphere.current, {
             scale: 2,
             y: -300,
             opacity: 0,
-        }, "l2")
+        }, "4.2")
 
         // tl.to(containerRef2.current, {
         //     opacity: 0,
