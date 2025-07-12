@@ -262,7 +262,7 @@ const NavBar3 = () => {
                     <AnimatedLogoText />
                 </div>
 
-                <div className={`min-w-[65%] min-h-[9vh] ${isThemeDark ? "bg-[#09090b81]" : "bg-[#ffffff81]"} px-5 py-2 rounded-full border-[#ffffff88] border-[1.2px] md:flex hidden items-center justify-between gap-12`}>
+                <div className={`min-w-[65%] min-h-[9vh] ${isThemeDark ? "bg-[#09090b81] border-[#ffffff88] border-[1.2px]" : "bg-[#fffafa81] border-[#00000088] border-[1.2px]"} px-5 py-2 rounded-full md:flex hidden items-center justify-between gap-12`}>
                     <AnimatedLogoText />
 
                     <div className={`w-full h-full flex items-center gap-10 text-center ${isThemeDark ? 'text-white' : 'text-black'}`}>
