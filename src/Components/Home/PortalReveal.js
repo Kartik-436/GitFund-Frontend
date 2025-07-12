@@ -173,17 +173,7 @@ const MaskedPage = () => {
                         <div className='bg-[#C776F6] h-[15vh] w-[57vw] absolute -top-27 left-57 rotate-[11.06deg] blur-[120px] pointer-events-none'></div>
 
                         <div ref={particlesRef} className='z-5 absolute inset-0 left-10 w-screen h-screen'>
-                            <Particles
-                                particleColors={['#ffffff', '#ffffff']}
-                                particleCount={700}
-                                particleSpread={16}
-                                speed={0.07}
-                                particleBaseSize={100}
-                                moveParticlesOnHover={true}
-                                particleHoverFactor={0.4}
-                                alphaParticles={false}
-                                disableRotation={false}
-                            />
+                            
                         </div>
 
                         <div ref={Textref1} className='absolute flex flex-col gap-5 items-start p-5 md:left-[48vw] md:max-w-[44vw] z-50 top-50 opacity-0 left-[5vw] max-w-[90vw]'>

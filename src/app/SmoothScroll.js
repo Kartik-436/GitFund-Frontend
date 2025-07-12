@@ -51,7 +51,7 @@ export default function SmoothScroll({ children }) {
 
         return () => {
             lenis.destroy()
-            ScrollTrigger.kill() // optional but clean
+            ScrollTrigger.getAll().forEach(st => st.kill()) // kill all ScrollTrigger instances
         }
     }, [])
 

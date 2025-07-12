@@ -27,44 +27,48 @@ const PurpleSphere = ({
 
     return (
         // Apply the dynamic style object to the SVG element
-        <div className='z-40 absolute top-36'>
-            <svg ref={sphereRef} viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" className='mx-auto' style={svgStyle}>
-                <defs>
-                    {/* Radial gradient for the sphere's main color and depth */}
-                    <radialGradient id="purpleSphereGradient" cx="30%" cy="30%" r="70%" fx="30%" fy="30%">
-                        <stop offset="0%" stopColor="#e0b0ff" /> {/* Lighter purple for highlight area */}
-                        <stop offset="50%" stopColor="#8a2be2" /> {/* Medium purple */}
-                        <stop offset="100%" stopColor="#5a0090" /> {/* Darker purple for edges */}
-                    </radialGradient>
-
-                    {/* Radial gradient for the specular highlight */}
-                    <radialGradient id="sphereHighlight" cx="35%" cy="25%" r="30%" fx="35%" fy="25%">
-                        <stop offset="0%" stopColor="rgba(255, 255, 255, 0.8)" />
-                        <stop offset="100%" stopColor="rgba(255, 255, 255, 0)" />
-                    </radialGradient>
-
-                    {/* Filter for the shadow blur */}
-                    <filter id="shadowBlur" x="-50%" y="-50%" width="200%" height="200%">
-                        <feGaussianBlur in="SourceGraphic" stdDeviation="5" />
-                        <feOffset dx="0" dy="5" result="offsetblur" />
-                        <feMerge>
-                            <feMergeNode in="offsetblur" />
-                            <feMergeNode in="SourceGraphic" />
-                        </feMerge>
-                    </filter>
-                </defs>
-
-                {/* Shadow - a blurred ellipse positioned below the sphere */}
-                <ellipse cx="100" cy="180" rx="60" ry="10" fill="rgba(0, 0, 0, 0.2)" filter="url(#shadowBlur)" />
-
-                {/* Sphere body */}
-                <circle cx="100" cy="100" r="80" fill="url(#purpleSphereGradient)" />
-
-                {/* Specular Highlight */}
-                <circle cx="90" cy="80" r="50" fill="url(#sphereHighlight)" />
-
-                {/* Small, sharp highlight for extra shine */}
-                <circle cx="75" cy="70" r="10" fill="rgba(255, 255, 255, 0.9)" />
+        <div className='z-50 absolute top-36'>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 200 200" className="l19k0qws" style={svgStyle}>
+              <g filter="url(#DarkOrb_svg__a)">
+                <circle cx="115.91" cy="135.003" r="93.184" fill="black" fillOpacity="1" style={{ fill: 'black', fillOpacity: 1 }}></circle>
+              </g>
+              <circle cx="100.002" cy="100.002" r="100.002" fill="url(#DarkOrb_svg__b)" fillOpacity="0.5" data-figma-bg-blur-radius="21.357"></circle>
+              <mask id="DarkOrb_svg__d" width="202" height="201" x="-1" y="0" maskUnits="userSpaceOnUse" style={{ maskType: 'alpha' }}>
+                <circle cx="100" cy="100.002" r="100.002" fill="url(#DarkOrb_svg__c)"></circle>
+              </mask>
+              <g mask="url(#DarkOrb_svg__d)">
+                <g filter="url(#DarkOrb_svg__e)">
+                  <circle cx="71.363" cy="73.638" r="44.092" fill="white" style={{ fill: 'white', fillOpacity: 1 }}></circle>
+                </g>
+                <g filter="url(#DarkOrb_svg__f)">
+                  <path fill="white" fillRule="evenodd" d="M74.4342 200.458C129.664 200.458 174.436 155.686 174.436 100.456C174.436 74.7892 164.767 51.3806 148.871 33.6748C175.279 51.6752 192.619 81.9956 192.619 116.366C192.619 171.595 147.846 216.368 92.6165 216.368C63.054 216.368 36.4875 203.54 18.1797 183.147C34.207 194.072 53.5748 200.458 74.4342 200.458Z" clipRule="evenodd" style={{ fill: 'white', fillOpacity: 1 }}></path>
+                </g>
+              </g>
+              <defs>
+                <filter id="DarkOrb_svg__a" width="291.824" height="291.824" x="-30.002" y="-10.91" colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse">
+                  <feFlood floodOpacity="0" result="BackgroundImageFix"></feFlood>
+                  <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feBlend>
+                  <feGaussianBlur result="effect1_foregroundBlur_1016_7067" stdDeviation="26.364"></feGaussianBlur>
+                </filter>
+                <filter id="DarkOrb_svg__e" width="157.276" height="157.276" x="-7.275" y="-5" colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse">
+                  <feFlood floodOpacity="0" result="BackgroundImageFix"></feFlood>
+                  <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feBlend>
+                  <feGaussianBlur result="effect1_foregroundBlur_1016_7067" stdDeviation="17.273"></feGaussianBlur>
+                </filter>
+                <filter id="DarkOrb_svg__f" width="243.532" height="251.786" x="-16.366" y="-0.871" colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse">
+                  <feFlood floodOpacity="0" result="BackgroundImageFix"></feFlood>
+                  <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feBlend>
+                  <feGaussianBlur result="effect1_foregroundBlur_1016_7067" stdDeviation="17.273"></feGaussianBlur>
+                </filter>
+                <linearGradient id="DarkOrb_svg__b" x1="77.489" x2="229.811" y1="58.897" y2="183.752" gradientUnits="userSpaceOnUse">
+                  <stop stopColor="#EAEAEA" style={{ stopColor: 'color(display-p3 0.9180 0.9180 0.9180)', stopOpacity: 1 }}></stop>
+                  <stop offset="1" stopColor="#969696" style={{ stopColor: 'color(display-p3 0.5879 0.5879 0.5879)', stopOpacity: 1 }}></stop>
+                </linearGradient>
+                <linearGradient id="DarkOrb_svg__c" x1="77.487" x2="229.809" y1="58.897" y2="183.752" gradientUnits="userSpaceOnUse">
+                  <stop stopColor="#EAEAEA" style={{ stopColor: 'color(display-p3 0.9180 0.9180 0.9180)', stopOpacity: 1 }}></stop>
+                  <stop offset="1" stopColor="#C4C4C4" style={{ stopColor: 'color(display-p3 0.7675 0.7675 0.7675)', stopOpacity: 1 }}></stop>
+                </linearGradient>
+              </defs>
             </svg>
         </div>
     );
