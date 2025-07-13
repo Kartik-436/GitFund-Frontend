@@ -27,7 +27,7 @@ const PurpleSphere = ({
 
     return (
         // Apply the dynamic style object to the SVG element
-        <div className='z-50 absolute top-36'>
+        <div className='z-50 absolute top-80'>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 200 200" className="l19k0qws" style={svgStyle}>
               <g filter="url(#DarkOrb_svg__a)">
                 <circle cx="115.91" cy="135.003" r="93.184" fill="black" fillOpacity="1" style={{ fill: 'black', fillOpacity: 1 }}></circle>
@@ -303,7 +303,7 @@ const WhyChoosePc = () => {
 
             <PurpleSphere
                 sphereRef={Sphere}
-                top="150"
+                top="250"
                 left="550"
                 width="400px"
                 height="500px"
@@ -333,7 +333,9 @@ const WhyChoosePc = () => {
                     </div>
 
                     <div className='flex items-center justify-center w-full'>
-                        <h1 className='text-center font-semibold text-[8vw] leading-10 md:leading-32 max-w-[50vw] text-[white] w-full'>Why choose Neoweave</h1>
+                        <h1 className='text-center mt-20 text-[7vw] leading-10 md:leading-32 max-w-[80vw] font-bethany text-[white] w-full'>
+                            Designed for Devs<br/> Driven by You.
+                        </h1>
                     </div>
                 </div>
             </div>
@@ -454,17 +456,17 @@ const WhyChoosePc = () => {
                         <div className=''></div>
                         <div className=''></div>
 
-                        <div ref={GE1} className='rounded-md border-2 bg-[#bb1bfa]'>
-                            1
+                        <div ref={GE1} className='rounded-md border-2 border-[#e5c297] border-1 '>
+                            <div></div>
                         </div>
 
-                        <div ref={GE2} className='rounded-md border-2 bg-[#bb1bfa]'>
+                        <div ref={GE2} className='rounded-md border-2 border-[#e5c297] border-1'>
                             2
                         </div>
 
                         <div className=''></div>
 
-                        <div ref={GE3} className='rounded-md border-2 bg-[#bb1bfa]'>
+                        <div ref={GE3} className='rounded-md border-2 border-[#e5c297] border-1'>
                             3
                         </div>
 
@@ -477,25 +479,25 @@ const WhyChoosePc = () => {
                         <div className=''></div>
                         <div className=''></div>
 
-                        <div ref={GE4} className='rounded-md border-2 bg-[#bb1bfa]'>
+                        <div ref={GE4} className='rounded-md border-2 border-[#e5c297] border-1'>
                             4
                         </div>
 
                         <div className=''></div>
                         <div className=''></div>
 
-                        <div ref={GE5} className='rounded-md border-2 bg-[#bb1bfa]'>
+                        <div ref={GE5} className='rounded-md border-2 border-[#e5c297] border-1'>
                             5
                         </div>
 
-                        <div ref={GE6} className='rounded-md border-2 bg-[#bb1bfa]'>
+                        <div ref={GE6} className='rounded-md border-2 border-[#e5c297] border-1'>
                             6
                         </div>
 
                         <div className=''></div>
                         <div className=''></div>
 
-                        <div ref={GE7} className='rounded-md border-2 bg-[#bb1bfa]'>
+                        <div ref={GE7} className='rounded-md border-2 border-[#e5c297] border-1'>
                             7
                         </div>
 
