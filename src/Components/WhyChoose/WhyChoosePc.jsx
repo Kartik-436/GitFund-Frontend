@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import DotGrid from './DotGridBackground'
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
-
+import { Icon } from '@iconify/react';
 gsap.registerPlugin(ScrollTrigger);
 
 const PurpleSphere = ({
@@ -456,12 +456,26 @@ const WhyChoosePc = () => {
                         <div className=''></div>
                         <div className=''></div>
 
-                        <div ref={GE1} className='rounded-md border-2 border-[#e5c297] border-1 '>
-                            <div></div>
-                        </div>
+                        <div ref={GE1} className='rounded-md border-2 border-[#c972ff] backdrop-blur-md bg-white/10 p-5'>
+                                                    <div className='text-[12px] text-[#c972ff] pb-4 flex'>
+                                                        Seamless GitHub Integration
+                                                        <Icon icon="mdi:github" width="24" height="24" />
+                                                    </div>
+                                                    <p className='text-[10px] text-[#f4e2ff]'>
+                                                        NeoWeave directly integrates with GitHub to auto-track contributions, PRs, and merges—rewarding developers without manual effort. Real-time repo monitoring ensures rewards are triggered instantly upon successful merges.
+                                                    </p>
+                                                </div>
 
                         <div ref={GE2} className='rounded-md border-2 border-[#e5c297] border-1'>
-                            2
+                            <div className='flex pb-4 gap-2'>
+                                <Icon icon="mdi:github" width="24" height="24" />
+                                                        <p className="text-[12px] text-[#c972ff]  ">
+                                                        Seamless GitHub Integration
+                                                        </p>
+                                                    </div>
+                                                    <p className='text-[10px] text-[#f4e2ff]'>
+                                                        NeoWeave directly integrates with GitHub to auto-track contributions, PRs, and merges—rewarding developers without manual effort. Real-time repo monitoring ensures rewards are triggered instantly upon successful merges.
+                                                    </p>
                         </div>
 
                         <div className=''></div>
