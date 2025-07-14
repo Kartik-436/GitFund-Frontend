@@ -11,24 +11,27 @@ import BentoGridDemo from './../Components/Bounties/BountiesSection';
 import Footer from './../Components/Footer/Footer';
 import { ThemeProvider } from './../Components/End/ThemeChangeContext';
 import NavBar3 from './../Components/NavBar/NavBar3';
+import { LayoutWithPreloader } from "./../components/LayoutWithPreloader";
 
 export default function Home() {
   return (
-    <SmoothScroll>
-      <ThemeProvider>
-        <div id="CompleteHomePage" className="bg-[#09090b] w-full min-h-screen overflow-hidden relative">
-          {/* <NavBarAll /> */}
-          <NavBar3 />
-          <MaskedPage />
-          <BentoGridDemo />
-          <WhyChoosePage />
-          <PricingPage />
-          <TestimonialsPage />
-          <LastPortal />
-          <FinalPage />
-          <Footer />
-        </div>
-      </ThemeProvider>
-    </SmoothScroll>
+    <LayoutWithPreloader>
+      <SmoothScroll>
+        <ThemeProvider>
+          <div id="CompleteHomePage" className="bg-[#09090b] w-full min-h-screen overflow-hidden relative">
+            {/* <NavBarAll /> */}
+            <NavBar3 />
+            <MaskedPage />
+            <BentoGridDemo />
+            <WhyChoosePage />
+            <PricingPage />
+            <TestimonialsPage />
+            <LastPortal />
+            <FinalPage />
+            <Footer />
+          </div>
+        </ThemeProvider>
+      </SmoothScroll>
+    </LayoutWithPreloader>
   )
 }
