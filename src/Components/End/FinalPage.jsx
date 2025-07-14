@@ -233,11 +233,11 @@ const FinalPage = () => {
                 
                       <FlickeringGrid
                         className="z-0 absolute inset-0 size-full"
-                        squareSize={6}
+                        squareSize={10}
                         gridGap={6}
                         color="#dcbde6ff"
                         maxOpacity={0.5}
-                        flickerChance={0.1}
+                        flickerChance={0.05}
                         height={4000}
                         width={2000}
                       />
