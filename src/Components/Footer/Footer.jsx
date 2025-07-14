@@ -78,7 +78,7 @@ const Footer = () => {
             </div> */}
 
             <div className='w-full h-full'>
-                <div className='w-[90vw] md:h-[0.15vh] h-[0.2vh] bg-[#09090b] absolute top-0 left-[4.7vw]'></div>
+                <div className='w-[90vw] md:h-[0.15vh] h-[0.2vh] bg-[#09090b] absolute top-[0.4px] left-[4.7vw]'></div>
             </div>
 
             <div>
@@ -97,25 +97,16 @@ const Footer = () => {
                 <PurpleSphere width='110px' height='110px' />
             </div> */}
 
-            <div className='z-10 absolute md:bottom-[18vh] bottom-[3vh] leading-0 w-full'>
-                <h1 style={{ fontFamily: 'var(--font-cypher)' }} className='text-black text-[18vw] z-50 font-bold text-center w-full'>neoweave</h1>
+            <div className='z-10 absolute md:bottom-[16vh] bottom-[3vh] leading-0 w-full'>
+                <h1 style={{ fontFamily: 'var(--font-cypher)' }} className='text-black text-[18vw] z-50 font-bold text-center w-full scale-y-150'>neoweave</h1>
                 {/*parkinsans, Barlow, Montserrat, Raleway, */}
 
                 {/* <Image alt="Font Image" src="/gitlogo.svg" width={2000} height={2000} /> */}
             </div>
 
             <div className="relative h-[700px]  w-full  overflow-hidden border">
-                            <FlickeringGrid
-                              className="z-0 absolute inset-0 size-full"
-                              squareSize={10}
-                              gridGap={6}
-                              color="#dcbde6ff"
-                              maxOpacity={0.5}
-                              flickerChance={0.05}
-                              height={4000}
-                              width={2000}
-                            />
-    </div>
+
+            </div>
         </div>
     )
 }

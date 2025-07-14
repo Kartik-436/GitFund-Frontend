@@ -35,6 +35,7 @@
     font-style: normal;
     font-display: swap;
 }
+
 :root {
     /* Define fallback fonts for each variable */
     --font-barlow: var(--font-barlow), sans-serif;
@@ -53,7 +54,7 @@
     --font-space-grotesk: var(--font-space-grotesk), sans-serif;
     --font-bethany: "Bethany", var(--font-inter), var(--font-lato), var(--font-roboto), var(--font-poppins), var(--font-kanit), sans-serif;
     --font-gafiya: "Gafiya", sans-serif;
-    --font-cypher:"Cscypher",sans-serif;
+    --font-cypher: "Cscypher", sans-serif;
     --radius: 0.625rem;
     --background: oklch(1 0 0);
     --foreground: oklch(0.145 0 0);
@@ -89,9 +90,9 @@
 
 }
 
-* {
-    font-family: var(--font-bethany);
-}
+/* * {
+    font-family: var(--font-inter);
+} */
 
 .no-visible-scrollbar {
     scrollbar-width: none;
@@ -224,10 +225,11 @@
 }
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
+    * {
+        @apply border-border outline-ring/50;
     }
-  body {
-    @apply bg-background text-foreground;
+
+    body {
+        @apply bg-background text-foreground;
     }
 }

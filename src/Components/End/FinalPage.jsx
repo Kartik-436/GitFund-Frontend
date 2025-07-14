@@ -231,17 +231,6 @@ const FinalPage = () => {
             {/** Background DotGrid */}
             <div className='w-full h-full inset-0 absolute z-0'>
                 
-                      <FlickeringGrid
-                        className="z-0 absolute inset-0 size-full"
-                        squareSize={10}
-                        gridGap={6}
-                        color="#dcbde6ff"
-                        maxOpacity={0.5}
-                        flickerChance={0.05}
-                        height={4000}
-                        width={2000}
-                      />
-                    
             </div>
         </div>
     );

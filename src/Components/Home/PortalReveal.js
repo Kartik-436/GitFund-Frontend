@@ -173,7 +173,7 @@ const MaskedPage = () => {
                         <div className='bg-[#C776F6] h-[15vh] w-[57vw] absolute -top-27 left-57 rotate-[11.06deg] blur-[120px] pointer-events-none'></div>
 
                         <div ref={particlesRef} className='z-5 absolute inset-0 left-10 w-screen h-screen'>
-                            
+                            <Particles />
                         </div>
 
                         <div ref={Textref1} className='absolute flex flex-col gap-5 items-start p-5 md:left-[48vw] md:max-w-[44vw] z-50 top-50 opacity-0 left-[5vw] max-w-[90vw]'>
@@ -194,16 +194,16 @@ const MaskedPage = () => {
                             className="flex mt-6 flex-col gap-5 text-white absolute top-54 md:top-35 z-50 items-center justify-center pointer-events-none"
                         >
                             <div className='backdrop-blur bg-white/10 rounded-full px-4 py-2'>
-                                    Trusted. Transparent. Blockchain-Powered.
+                                Trusted. Transparent. Blockchain-Powered.
                             </div>
                             <div className="md:text-[96px] text-[50px] max-w-[70vw] text-center leading-none text-transparent bg-clip-text bg-gradient-to-r from-[#C1C1DF] from-55% to-[#333352] to-95% font-[Lato] font-semibold">
-                                Earn Crypto by Solving <br/> Open Source
+                                Earn Crypto by Solving <br /> Open Source
                             </div>
-                            
+
                         </motion.div>
                     </div>
                 </div>
-                
+
 
 
             </main >

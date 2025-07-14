@@ -176,7 +176,7 @@ const NavBar3 = () => {
         <div>
             <div
                 ref={NavBarC}
-                className={`h-[12vh] z-[9999] w-screen fixed top-[10px] md:top-4 left-0 pl-8 md:px-16 flex items-center justify-center transition-transform duration-500 ${isVisible ? 'translate-y-0' : '-translate-y-[150%]'
+                className={`h-[12vh] z-[9999] w-screen fixed top-[10px] md:top-4 left-0 pl-8 md:px-16 flex items-center justify-center transition-transform duration-500 ${isVisible ? 'translate-y-0' : '-translate-y-[150%] font-[inter]'
                     }`}
             >
                 {/* Mobile Nav - Burger Menu */}
@@ -264,7 +264,7 @@ const NavBar3 = () => {
                     <AnimatedLogoText />
                 </div>
 
-                <div className={`min-w-[65%] backdrop-blur min-h-[9vh] ${isThemeDark ? "bg-[#09090b81]  border-[1.2px]" : "bg-[#fffafa81]  "} px-5 py-2 rounded-full md:flex hidden items-center justify-between gap-12`}>
+                <div className={`min-w-[45%] backdrop-blur min-h-[9vh] ${isThemeDark ? "bg-[#09090b81]  border-[1.2px]" : "bg-[#fffafa81] border-[1.2px] border-black"} px-5 py-2 rounded-full md:flex hidden items-center justify-between gap-12`}>
                     <AnimatedLogoText />
 
                     <div className={`w-full h-full flex items-center gap-10 text-center ${isThemeDark ? 'text-white' : 'text-black'}`}>

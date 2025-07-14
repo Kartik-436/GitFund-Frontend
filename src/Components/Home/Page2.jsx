@@ -28,8 +28,8 @@ export default function Page2() {
             rotateX: 0,
             scrollTrigger: {
                 trigger: textref.current,
-                start: "top -150%",
-                end: "bottom -185%",
+                start: "top -540%",
+                end: "bottom -580%",
                 scrub: 1,
             }
         })
@@ -57,7 +57,7 @@ export default function Page2() {
             </div> */}
 
             <div ref={textref} className='min-h-[30vh] z-20 md:mt-0 mt-[20vh]'>
-                <h1 className='md:text-[6vw] text-[12vw] capitalize text-center font-semibold'>Introducing Neoweave</h1>
+                <h1 className='md:text-[6vw] text-[12vw] capitalize text-center font-semibold font-[Inter]'>Introducing Neoweave</h1>
                 <p className='font-medium text-center'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, quasi.</p>
             </div>
             <div style={{ perspective: "1000px" }} className='rounded-xl min-h-[60vh] md:min-h-screen w-full flex flex-col items-center md:gap-15 md:p-10 p-5 gap-5 z-20'>

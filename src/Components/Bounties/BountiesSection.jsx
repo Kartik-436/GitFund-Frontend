@@ -103,7 +103,7 @@ function BentoGridDemo() {
     }, [])
 
     return (
-        <div id='bounties' className='min-h-[150vh] h-full relative flex flex-col gap-[10vh] items-center py-[20vh] justify-center'>
+        <div id='bounties' className='dark min-h-[150vh] h-full relative flex flex-col gap-[10vh] items-center py-[20vh] justify-center'>
             <div ref={Headref} className='flex flex-col gap-3 w-full items-start px-[10vw]'>
                 <h1 className='text-[8vw] font-bold leading-0 text-shadow-white text-white'>
                     Popular
@@ -137,8 +137,8 @@ function BentoGridDemo() {
                 </div>
             </div>
 
-            
-                                                       
+
+
         </div>
     );
 }
