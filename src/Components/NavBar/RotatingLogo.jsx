@@ -21,16 +21,16 @@ const RotatingLogo = ({ size = 1, speed = 0.01, direction = 'clockwise', onLoad 
 };
 
 const NeowareLogo = ({ width = 100, height = 100, size = 1, speed = 0.01, direction = 'clockwise' }) => {
-    const [isLoaded, setIsLoaded] = useState(false);
-    
+    const { isThemeDark, setIsThemeDark, isLoaded, setIsLoaded } = useThemeChange();
+
     useEffect(() => {
         const timer = setTimeout(() => {
             setIsLoaded(true);
         }, 10000);
-        
+
         return () => clearTimeout(timer);
     }, []);
-    
+
     return (
         <div style={{ width, height, position: 'relative' }}>
             {!isLoaded && (
@@ -45,22 +45,22 @@ const NeowareLogo = ({ width = 100, height = 100, size = 1, speed = 0.01, direct
             {
                 isLoaded && (
                     <>
-                    <Canvas camera={{ position: [0, 0, 3] }} gl={{ preserveDrawingBuffer: true }}>
-                        <ambientLight intensity={1} />
-                        <directionalLight position={[2, 2, 5]} intensity={1.5} />
-                        <Suspense fallback={null}>
-                            <RotatingLogo
-                                size={size}
-                                speed={speed}
-                                direction={direction}
-                                onLoad={() => setIsLoaded(true)}
-                            />
-                        </Suspense>
-                    </Canvas>
+                        <Canvas camera={{ position: [0, 0, 3] }} gl={{ preserveDrawingBuffer: true }}>
+                            <ambientLight intensity={1} />
+                            <directionalLight position={[2, 2, 5]} intensity={1.5} />
+                            <Suspense fallback={null}>
+                                <RotatingLogo
+                                    size={size}
+                                    speed={speed}
+                                    direction={direction}
+                                    onLoad={() => setIsLoaded(true)}
+                                />
+                            </Suspense>
+                        </Canvas>
                     </>
                 )
             }
-            
+
         </div>
     );
 };

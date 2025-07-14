@@ -5,9 +5,10 @@ const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
     const [isThemeDark, setIsThemeDark] = useState(true);
+    const [isLoaded, setIsLoaded] = useState(true);
 
     return (
-        <ThemeContext.Provider value={{ isThemeDark, setIsThemeDark }}>
+        <ThemeContext.Provider value={{ isThemeDark, setIsThemeDark, isLoaded, setIsLoaded }}>
             {children}
         </ThemeContext.Provider>
     );

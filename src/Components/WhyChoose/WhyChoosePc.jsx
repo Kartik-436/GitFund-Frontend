@@ -175,7 +175,7 @@ const WhyChoosePc = () => {
             scrollTrigger: {
                 trigger: Container2.current,
                 start: 'top 20%',
-                end: '+=2500',
+                end: '+=1800',
                 scrub: 1,
                 scroller: document.body
             },
@@ -300,7 +300,7 @@ const WhyChoosePc = () => {
     }, [])
 
     return (
-        <div id='how-it-works' className='w-full h-[500vh] relative items-center justify-center m-0 p-0 flex'>
+        <div id='how-it-works' className='w-full h-[400vh] relative items-center justify-center m-0 p-0 flex'>
 
             <PurpleSphere
                 sphereRef={Sphere}

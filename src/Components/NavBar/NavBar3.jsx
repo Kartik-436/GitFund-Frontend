@@ -79,7 +79,7 @@ const NavBar3 = () => {
         setMenuOpen(prev => !prev);
     };
 
-    const { isThemeDark, setIsThemeDark } = useThemeChange();
+    const { isThemeDark, setIsThemeDark, isLoaded, setIsLoaded } = useThemeChange();
 
     const AnimatedLogoText = () => {
         const textRef = useRef(null);
