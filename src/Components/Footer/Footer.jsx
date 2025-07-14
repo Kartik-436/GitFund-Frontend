@@ -1,10 +1,7 @@
-"use Client";
+"use client";
 import React from 'react'
-import DotGrid from '../WhyChoose/DotGridBackground';
 import Lanyard from './Lanyard';
-import StringAnimation from './../../lib/StringAnimation';
-import Image from 'next/image';
-import { FlickeringGrid } from "../ui/flickering-grid.tsx";
+
 
 
 const PurpleSphere = ({   // Default left position

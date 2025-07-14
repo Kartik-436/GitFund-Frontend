@@ -1,11 +1,11 @@
 'use client';
 import React, { useEffect, useRef, useState } from 'react';
-import DotGrid from '../WhyChoose/DotGridBackground';
+
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { motion } from 'framer-motion';
-import Footer from '../Footer/Footer';
-import {FlickeringGrid} from '../ui/flickering-grid'
+import Footer from '../components/Footer';
+
 gsap.registerPlugin(ScrollTrigger);
 
 const StringAnimation2 = () => {
