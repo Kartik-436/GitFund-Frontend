@@ -3,6 +3,7 @@
 import { Canvas, useFrame } from '@react-three/fiber';
 import { useGLTF } from '@react-three/drei';
 import { Suspense, useRef, useState, useEffect } from 'react';
+import { useThemeChange } from '../End/ThemeChangeContext';
 
 const RotatingLogo = ({ size = 1, speed = 0.01, direction = 'clockwise', onLoad }) => {
     const modelRef = useRef();
