@@ -8,7 +8,7 @@ import LastPortal from '../components/End/LastPortal';
 import FinalPage from '../components/End/FinalPage';
 import NavBarAll from '../components/NavBar/NavBarAll';
 import BentoGridDemo from '../components/Bounties/BountiesSection';
-import Footer from '../components/Footer/Footer';
+import Footer from '../components/Footer/page';
 import { ThemeProvider } from '../components/End/ThemeChangeContext';
 import NavBar3 from '../components/NavBar/NavBar3';
 import { LayoutWithPreloader } from "../components/LayoutWithPreloader";
