@@ -4,6 +4,8 @@ import DotGrid from '../WhyChoose/DotGridBackground';
 import Lanyard from './Lanyard';
 import StringAnimation from './../../lib/StringAnimation';
 import Image from 'next/image';
+import { FlickeringGrid } from "@/components/ui/flickering-grid.tsx";
+
 
 const PurpleSphere = ({   // Default left position
     width = '200px',    // Default width
@@ -96,25 +98,24 @@ const Footer = () => {
             </div> */}
 
             <div className='z-10 absolute md:bottom-[18vh] bottom-[3vh] leading-0 w-full'>
-                <h1 className='text-black text-[22vw] z-50 font-bold font-[Barlow] text-center w-full'>neoweave</h1>
+                <h1 style={{ fontFamily: 'var(--font-cypher)' }} className='text-black text-[18vw] z-50 font-bold text-center w-full'>neoweave</h1>
                 {/*parkinsans, Barlow, Montserrat, Raleway, */}
 
                 {/* <Image alt="Font Image" src="/gitlogo.svg" width={2000} height={2000} /> */}
             </div>
 
-            <div className='w-full h-full inset-0 absolute z-0'>
-                <DotGrid
-                    dotSize={2}
-                    gap={19}
-                    baseColor="#eea21580"
-                    activeColor="#9D00FF"
-                    proximity={150}
-                    shockRadius={300}
-                    shockStrength={7}
-                    resistance={800}
-                    returnDuration={1.5}
-                />
-            </div>
+            <div className="relative h-[700px]  w-full  overflow-hidden border">
+                            <FlickeringGrid
+                              className="z-0 absolute inset-0 size-full"
+                              squareSize={6}
+                              gridGap={6}
+                              color="#dcbde6ff"
+                              maxOpacity={0.5}
+                              flickerChance={0.1}
+                              height={4000}
+                              width={2000}
+                            />
+    </div>
         </div>
     )
 }

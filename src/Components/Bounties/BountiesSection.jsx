@@ -14,7 +14,7 @@ import {
 } from "@tabler/icons-react";
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
-
+import { FlickeringGrid } from '../ui/flickering-grid';
 // const BountiesSection = () => {
 //     const items = [
 //         {
@@ -138,18 +138,19 @@ function BentoGridDemo() {
             </div>
 
             <div className='w-full h-full inset-0 absolute z-0'>
-                <DotGrid
-                    dotSize={2}
-                    gap={19}
-                    baseColor="#ffffff50"
-                    activeColor="#9D00FF"
-                    proximity={150}
-                    shockRadius={300}
-                    shockStrength={7}
-                    resistance={800}
-                    returnDuration={1.5}
-                />
-            </div>
+                                                            
+                                                                  <FlickeringGrid
+                                                                    className="z-0 absolute inset-0 size-full"
+                                                                    squareSize={6}
+                                                                    gridGap={6}
+                                                                    color="#5c595e11"
+                                                                    maxOpacity={0.5}
+                                                                    flickerChance={0.1}
+                                                                    height={4000}
+                                                                    width={2000}
+                                                                  />
+                                                                
+                                                        </div>
         </div>
     );
 }

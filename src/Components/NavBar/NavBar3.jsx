@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 'use client';
+import { cn } from "../../lib/utils";
 
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { motion, useMotionValue, animate, useAnimation } from 'framer-motion';
@@ -161,7 +162,8 @@ const NavBar3 = () => {
                 <div className='overflow-hidden'>
                     <h1
                         ref={textRef}
-                        className={`${isThemeDark ? 'text-white' : 'text-black'} text-2xl text-center font-semibold scale-y-120 font-[Poppins]`}
+                        className={`${isThemeDark ? 'text-white' : 'text-black'} text-2xl text-center  scale-y-120 `}
+                        style={{ fontFamily: 'var(--font-cypher)' }}
                     >
                         neoweave
                     </h1>
@@ -228,14 +230,14 @@ const NavBar3 = () => {
                                     setMenuOpen(false);
                                 }}
                                 whileTap={{ scale: 0.95 }}
-                                className="border-b border-white/20 pb-2"
+                                className=" pb-2"
                             >
                                 {item.text}
                             </motion.div>
                         ))}
                         <div className="mt-6 flex flex-col gap-4">
                             <motion.div
-                                className="py-3 text-center rounded-lg font-semibold bg-white/10 border border-white/20 text-white backdrop-blur-lg"
+                                className="py-3 text-center rounded-lg font-semibold bg-white/10  text-white backdrop-blur-lg"
                                 whileTap={{ scale: 0.95 }}
                                 onClick={() => {
                                     handleNavigation('');
@@ -262,7 +264,7 @@ const NavBar3 = () => {
                     <AnimatedLogoText />
                 </div>
 
-                <div className={`min-w-[65%] min-h-[9vh] ${isThemeDark ? "bg-[#09090b81] border-[#ffffff88] border-[1.2px]" : "bg-[#fffafa81] border-[#00000088] border-[1.2px]"} px-5 py-2 rounded-full md:flex hidden items-center justify-between gap-12`}>
+                <div className={`min-w-[65%] min-h-[9vh] ${isThemeDark ? "bg-[#09090b81]  border-[1.2px]" : "bg-[#fffafa81]  "} px-5 py-2 rounded-full md:flex hidden items-center justify-between gap-12`}>
                     <AnimatedLogoText />
 
                     <div className={`w-full h-full flex items-center gap-10 text-center ${isThemeDark ? 'text-white' : 'text-black'}`}>
@@ -273,12 +275,8 @@ const NavBar3 = () => {
                     </div>
 
                     <div className='w-full h-full flex items-center justify-end gap-3'>
-                        <div className={`px-5 py-2 rounded-full font-semibold text-nowrap ${isThemeDark ? 'text-black bg-white' : 'text-white bg-black'} shadow-[0_0_20px_2px] shadow-[#fff] cursor-pointer`} onClick={() => handleNavigation('')}>
+                        <div className={`px-5 py-2 rounded-full font-semibold text-nowrap ${isThemeDark ? 'text-black bg-white' : 'text-white bg-black'} shadow-[0_0_10px_2px] shadow-[#fff] cursor-pointer`} onClick={() => handleNavigation('')}>
                             Log In
-                        </div>
-
-                        <div className='px-5 py-2 rounded-full font-semibold text-nowrap text-white bg-[#a200ff] shadow-[0_0_20px_2px] shadow-[#a200ff] cursor-pointer' onClick={() => handleNavigation('')}>
-                            Sign Up
                         </div>
                     </div>
                 </div>

@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 import Page2 from './Page2';
 import Page1 from './GradientSemiCircle';
 import Particles from './particle';
-
+import { FlickeringGrid } from '../ui/flickering-grid';
 gsap.registerPlugin(ScrollTrigger);
 
 const MaskedPage = () => {
@@ -49,7 +49,7 @@ const MaskedPage = () => {
             scrollTrigger: {
                 trigger: containerRef.current,
                 start: 'top top',
-                end: '+=1500', // adjust based on how much scroll you want
+                end: '+=4000', // adjust based on how much scroll you want
                 scrub: 1,
                 pin: true,
             },
@@ -191,17 +191,33 @@ const MaskedPage = () => {
                             // initial={{ y: -200, opacity: 0 }}
                             // animate={{ y: 0, opacity: 1 }}
                             // transition={{ duration: 1, ease: "easeOut", delay: 0.4 }}
-                            className="flex flex-col gap-5 text-white absolute top-54 md:top-35 z-50 items-center justify-center pointer-events-none"
+                            className="flex mt-6 flex-col gap-5 text-white absolute top-54 md:top-35 z-50 items-center justify-center pointer-events-none"
                         >
-                            <div className="md:text-[96px] text-[50px] max-w-[70vw] text-center leading-none text-transparent bg-clip-text bg-gradient-to-r from-[#C1C1DF] from-55% to-[#333352] to-95% font-[Lato] font-semibold">
-                                Earn Crypto by Solving Open Source
+                            <div className='backdrop-blur bg-white/10 rounded-full px-4 py-2'>
+                                    Trusted. Transparent. Blockchain-Powered.
                             </div>
-                            <p className="max-w-[70vw] text-center leading-none text-[#e5e5ee] font-[inter]">
-                                Transform your open-source impact into real earnings with fast and secure Payouts.
-                            </p>
+                            <div className="md:text-[96px] text-[50px] max-w-[70vw] text-center leading-none text-transparent bg-clip-text bg-gradient-to-r from-[#C1C1DF] from-55% to-[#333352] to-95% font-[Lato] font-semibold">
+                                Earn Crypto by Solving <br/> Open Source
+                            </div>
+                            
                         </motion.div>
                     </div>
                 </div>
+                <div className='w-full h-full inset-0 absolute z-0'>
+                                                                            
+                                                                                  <FlickeringGrid
+                                                                                    className="z-0 absolute inset-0 size-full"
+                                                                                    squareSize={6}
+                                                                                    gridGap={6}
+                                                                                    color="#5c595e11"
+                                                                                    maxOpacity={0.5}
+                                                                                    flickerChance={0.1}
+                                                                                    height={4000}
+                                                                                    width={2000}
+                                                                                  />
+                                                                                
+                                                                        </div>
+
 
             </main >
         </>

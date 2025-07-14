@@ -5,7 +5,7 @@ import DotGrid from './DotGridBackground'
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import { Icon } from '@iconify/react';
-import  {BackgroundGradient}  from '../gradient-card';
+import { FlickeringGrid } from '../ui/flickering-grid';
 gsap.registerPlugin(ScrollTrigger);
 
 const PurpleSphere = ({
@@ -457,7 +457,10 @@ const WhyChoosePc = () => {
                         <div className=''></div>
                         <div className=''></div>
 
-                        <BackgroundGradient ref={GE1} className='rounded-md border-2 backdrop-blur-md bg-white p-5'>
+                        <div ref={GE1} className='rounded-md border-2 border-[#c972ff] backdrop-blur-md bg-white/10 p-5'>
+                                                </div>
+
+                        <div ref={GE2} className='rounded-md border-2 border-[#c972ff] backdrop-blur-md bg-white/10 p-5'>
                                                     <div className='text-[12px] text-[#c972ff] pb-4 flex'>
                                                         Auto-Rewarded Merged PRs
                                                         
@@ -465,17 +468,7 @@ const WhyChoosePc = () => {
                                                     <p className='text-[10px] text-[#f4e2ff]'>
 GitFund tracks merged pull requests in real-time and auto-distributes rewards, removing manual claim steps and letting contributors focus on coding.                                                
                                                     </p>
-                                                    </BackgroundGradient>
-
-                        <BackgroundGradient ref={GE2} className='rounded-[22px] max-w-sm p-4  bg-white dark:bg-zinc-900'>
-                                                    <div className='text-[14px] text-[#c972ff] pb-4 flex'>
-                                                        Auto-Rewarded Merged PRs
-                                                        
                                                     </div>
-                                                    <p className='text-[10px] text-[#f4e2ff]'>
-GitFund tracks merged pull requests in real-time and auto-distributes rewards, removing manual claim steps and letting contributors focus on coding.                                                
-                                                    </p>
-                                                    </BackgroundGradient>
                         <div className=''></div>
 
                         <div ref={GE3} className='rounded-md border-2 border-[#c972ff] backdrop-blur-md bg-white/10 p-5'>
@@ -540,6 +533,20 @@ Repo maintainers can define custom reward criteria—like tags, lines changed, o
                 </div>
             </div>
 
+            <div className='w-full h-full inset-0 absolute z-0'>
+                                                
+                                                      <FlickeringGrid
+                                                        className="z-0 absolute inset-0 size-full"
+                                                        squareSize={6}
+                                                        gridGap={6}
+                                                        color="#5c595e11"
+                                                        maxOpacity={0.5}
+                                                        flickerChance={0.1}
+                                                        height={4000}
+                                                        width={2000}
+                                                      />
+                                                    
+                                            </div>
         </div>
     )
 }

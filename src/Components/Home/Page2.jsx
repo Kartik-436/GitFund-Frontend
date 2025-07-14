@@ -7,7 +7,7 @@ import DotGrid from '../WhyChoose/DotGridBackground';
 import Bg from '../Pricing Page/BgPricing';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
+import { FlickeringGrid } from '../ui/flickering-grid';
 gsap.registerPlugin(ScrollTrigger)
 
 const data = {
@@ -94,6 +94,21 @@ export default function Page2() {
                     </div>
                 </div>
             </div>
+
+            <div className='w-full h-full inset-0 absolute z-0'>
+                                                                            
+                                                                                  <FlickeringGrid
+                                                                                    className="z-0 absolute inset-0 size-full"
+                                                                                    squareSize={6}
+                                                                                    gridGap={6}
+                                                                                    color="#5c595e11"
+                                                                                    maxOpacity={0.5}
+                                                                                    flickerChance={0.1}
+                                                                                    height={4000}
+                                                                                    width={2000}
+                                                                                  />
+                                                                                
+                                                                        </div>
         </div>
     );
 }

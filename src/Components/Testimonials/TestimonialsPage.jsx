@@ -3,7 +3,7 @@ import { InfiniteMovingCards } from './InfiniteCarousal';
 import gsap from 'gsap';
 import Bg from '../Pricing Page/BgPricing';
 import DotGrid from '../WhyChoose/DotGridBackground';
-
+import { FlickeringGrid } from '../ui/flickering-grid';
 function InfiniteMovingCardsDemo() {
     return (
         <div className="min-h-[28rem] rounded-md flex flex-col antialiased bg-white dark:bg-[#09090b] dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
@@ -63,39 +63,23 @@ const TestimonialsPage = () => {
             </div>
 
             {/* Floating Balls */}
-            <div
-                ref={(el) => (ballRefs.current[0] = el)}
-                className='bg-[#BCD994] h-[15vh] w-[15vh] absolute top-29 left-26 rounded-full blur-xl z-0'
-            ></div>
-            <div
-                ref={(el) => (ballRefs.current[1] = el)}
-                className='bg-[#C396DD] h-[20vh] w-[20vh] absolute top-8 right-26 rounded-full blur-xl z-0'
-            ></div>
-            <div
-                ref={(el) => (ballRefs.current[2] = el)}
-                className='bg-[#5BF68E] h-[10vh] w-[10vh] absolute top-45 right-155 rounded-full blur-xl z-0'
-            ></div>
-            <div
-                ref={(el) => (ballRefs.current[3] = el)}
-                className='bg-[#FF5DCB] h-[15vh] w-[15vh] absolute bottom-9 left-40 rounded-full blur-xl z-0'
-            ></div>
-            <div
-                ref={(el) => (ballRefs.current[4] = el)}
-                className='bg-[#DA4848] h-[20vh] w-[20vh] absolute bottom-2 right-22 rounded-full blur-xl z-0'
-            ></div>
+            
 
             <div className='w-full h-full inset-0 absolute z-0'>
-                <DotGrid
-                    dotSize={2}
-                    gap={19}
-                    baseColor="#ffffff50"
-                    activeColor="#9D00FF"
-                    proximity={150}
-                    shockRadius={300}
-                    shockStrength={7}
-                    resistance={800}
-                    returnDuration={1.5}
-                />
+                <div className='w-full h-full inset-0 absolute z-0'>
+                                                
+                                                      <FlickeringGrid
+                                                        className="z-0 absolute inset-0 size-full"
+                                                        squareSize={6}
+                                                        gridGap={6}
+                                                        color="#5c595e11"
+                                                        maxOpacity={0.5}
+                                                        flickerChance={0.1}
+                                                        height={4000}
+                                                        width={2000}
+                                                      />
+                                                    
+                                            </div>
             </div>
         </div>
     );
