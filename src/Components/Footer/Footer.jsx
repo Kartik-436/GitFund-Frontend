@@ -4,7 +4,7 @@ import DotGrid from '../WhyChoose/DotGridBackground';
 import Lanyard from './Lanyard';
 import StringAnimation from './../../lib/StringAnimation';
 import Image from 'next/image';
-import { FlickeringGrid } from "@/components/ui/flickering-grid.tsx";
+import { FlickeringGrid } from "../ui/flickering-grid.tsx";
 
 
 const PurpleSphere = ({   // Default left position
