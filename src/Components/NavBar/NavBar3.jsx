@@ -110,7 +110,7 @@ const NavBar3 = () => {
                 ease: 'power2.inOut',
                 onStart: () => {
                     setSpinDirection('anticlockwise');
-                    animateSpeedTo(1, 0.5); // gradually speed up
+                    animateSpeedTo(0.18, 0.02); // gradually speed up
                 },
             })
                 .to(textRef.current, {
@@ -119,7 +119,7 @@ const NavBar3 = () => {
                     ease: 'power2.inOut',
                     onStart: () => {
                         setSpinDirection('clockwise');
-                        animateSpeedTo(0.08, 1); // gradually slow down
+                        animateSpeedTo(0.02, 0.18); // gradually slow down
                     },
                 })
                 .to(textRef.current, {
@@ -129,7 +129,7 @@ const NavBar3 = () => {
                     delay: 4,
                     onStart: () => {
                         setSpinDirection('clockwise');
-                        animateSpeedTo(1, 0.5);
+                        animateSpeedTo(0.18, 0.02);
                     },
                 })
                 .to(textRef.current, {
@@ -138,7 +138,7 @@ const NavBar3 = () => {
                     ease: 'power2.inOut',
                     onStart: () => {
                         setSpinDirection('anticlockwise');
-                        animateSpeedTo(0.08, 1);
+                        animateSpeedTo(0.02, 0.18);
                     },
                 });
 
