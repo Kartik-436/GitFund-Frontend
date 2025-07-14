@@ -311,17 +311,7 @@ const WhyChoosePc = () => {
             />
 
             <div className='w-full h-full min-h-screen relative'>
-                <DotGrid
-                    dotSize={2}
-                    gap={19}
-                    baseColor="#ffffff50"
-                    activeColor="#9D00FF"
-                    proximity={150}
-                    shockRadius={300}
-                    shockStrength={7}
-                    resistance={800}
-                    returnDuration={1.5}
-                />
+                
             </div>
 
             <div ref={Text} className='absolute z-50 top-15'>
