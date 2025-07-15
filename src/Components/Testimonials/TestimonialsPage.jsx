@@ -1,9 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import { InfiniteMovingCards } from './InfiniteCarousal';
 import gsap from 'gsap';
-import Bg from '../Pricing Page/BgPricing';
-import DotGrid from '../WhyChoose/DotGridBackground';
-import { FlickeringGrid } from '../ui/flickering-grid';
+
 function InfiniteMovingCardsDemo() {
     return (
         <div className="min-h-[28rem] rounded-md flex flex-col antialiased bg-white dark:bg-[#09090b] dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">

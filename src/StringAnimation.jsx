@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 'use client'
-
 import gsap from 'gsap';
 import React, { useEffect, useRef, useState } from 'react'
 

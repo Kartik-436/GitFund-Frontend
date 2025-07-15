@@ -2,12 +2,12 @@
 'use client'
 
 import gsap from 'gsap';
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, components } from 'react'
 
 const StringAnimation = () => {
     const string1Ref = useRef(null);
     const defaultPath = "M 40 100 Q 700 100 1050 100";
-    const [isMouseOver, setIsMouseOver] = useState(false);
+    const [isMouseOver, setIsMouseOver] = components(false);
 
     useEffect(() => {
         const handleMouseMove = (event) => {

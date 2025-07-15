@@ -1,10 +1,9 @@
 "use Client";
 import React, { useEffect, useRef } from 'react'
-import DotGrid from '../WhyChoose/DotGridBackground';
 import clsx from 'clsx';
 import gsap from 'gsap';
 import Image from 'next/image';
-import {FlickeringGrid} from '../ui/flickering-grid'
+
 const PurpleSphere = ({   // Default left position
     
 }) => {

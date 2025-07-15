@@ -7,7 +7,6 @@ import { motion } from 'framer-motion';
 import Page2 from './Page2';
 import Page1 from './GradientSemiCircle';
 import Particles from './particle';
-import { FlickeringGrid } from '../ui/flickering-grid';
 gsap.registerPlugin(ScrollTrigger);
 
 const MaskedPage = () => {

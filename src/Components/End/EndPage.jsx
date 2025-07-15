@@ -1,7 +1,6 @@
 "use Client";
 import React from 'react'
-import DotGrid from '../WhyChoose/DotGridBackground';
-import {FlickeringGrid} from '../ui/flickering-grid'
+
 const EndPage = () => {
     return (
         <div className='bg-[#09090b] w-full min-h-[120vh] overflow-hidden relative flex items-end justify-center'>

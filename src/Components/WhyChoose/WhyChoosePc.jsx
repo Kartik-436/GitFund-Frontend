@@ -1,11 +1,10 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react'
-import DotGrid from './DotGridBackground'
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import { Icon } from '@iconify/react';
-import { FlickeringGrid } from '../ui/flickering-grid';
+
 gsap.registerPlugin(ScrollTrigger);
 
 const PurpleSphere = ({
