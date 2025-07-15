@@ -1,6 +1,5 @@
 'use client';
 import React, { useEffect, useRef, useState } from 'react';
-
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { motion } from 'framer-motion';
@@ -186,17 +185,7 @@ const FinalPage = () => {
                 <div ref={Notiref1} className='bg-transparent h-[60vh] w-[90vw] md:w-[80vw] flex items-start justify-center rounded-full border-2 border-[#dbcaab]'>
                     <div ref={Notiref2} className='bg-[#09090b] h-[54vh] w-[90vw] md:w-[80vw] rounded-full z-50'>
                         <div className='w-full h-full inset-0 absolute z-0'>
-                            <DotGrid
-                                dotSize={2}
-                                gap={19}
-                                baseColor="#ffffff50"
-                                activeColor="#9D00FF"
-                                proximity={150}
-                                shockRadius={300}
-                                shockStrength={7}
-                                resistance={800}
-                                returnDuration={1.5}
-                            />
+
                         </div>
                     </div>
                 </div>
@@ -227,9 +216,9 @@ const FinalPage = () => {
                 <h1 className='md:text-2xl text-xl font-[Marcellus] font-medium'>So you don't have to be.</h1>
             </div>
 
-            {/** Background DotGrid */}
+            {/* Background DotGrid */}
             <div className='w-full h-full inset-0 absolute z-0'>
-                
+
             </div>
         </div>
     );

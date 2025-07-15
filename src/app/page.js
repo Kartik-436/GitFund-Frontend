@@ -3,7 +3,6 @@ import PricingPage from "../components/Pricing Page/PricingPage"
 import SmoothScroll from "./SmoothScroll"
 import TestimonialsPage from '../components/Testimonials/TestimonialsPage';
 import WhyChoosePage from '../components/WhyChoose/WhyChoosePage';
-import MaskedPage from "../components/Home/PortalReveal"
 import LastPortal from '../components/End/LastPortal';
 import FinalPage from '../components/End/FinalPage';
 import NavBarAll from '../components/NavBar/NavBarAll';
@@ -12,6 +11,7 @@ import Footer from '../components/Footer/page';
 import { ThemeProvider } from '../components/End/ThemeChangeContext';
 import NavBar3 from '../components/NavBar/NavBar3';
 import { LayoutWithPreloader } from "../components/LayoutWithPreloader";
+import MaskedPage from "@/Components/Home/PortalReveal";
 
 export default function Home() {
   return (

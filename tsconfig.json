@@ -33,7 +33,7 @@
     "**/*.tsx",
     "next-env.d.ts",
     ".next/types/**/*.ts"
-  ],
+, "src/Components/WhyChoose/DotGridBackground.jsx"  ],
   "exclude": [
     "node_modules"
   ]
