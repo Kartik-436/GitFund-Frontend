@@ -5,6 +5,7 @@ import clsx from 'clsx';
 import { motion, anticipate } from 'framer-motion';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import DotGrid from '../WhyChoose/DotGridBackground';
 gsap.registerPlugin(ScrollTrigger)
 
 const data = {
@@ -36,7 +37,17 @@ export default function Page2() {
         <div className="md:min-h-screen  bg-[#09090b] text-white relative p-30 mb-[20vh] flex flex-col items-center">
 
             <div className='w-full h-full inset-0 absolute z-0'>
-
+                <DotGrid
+                    dotSize={2.5}
+                    gap={26}
+                    baseColor="#ffffff50"
+                    activeColor="#9D00FF"
+                    proximity={150}
+                    shockRadius={300}
+                    shockStrength={7}
+                    resistance={800}
+                    returnDuration={1.5}
+                />
             </div>
 
             {/* <div className='absolute top-0 inset-0 left-0 h-full'>

@@ -2,8 +2,6 @@
 import React from 'react'
 import Lanyard from './Lanyard';
 
-
-
 const PurpleSphere = ({   // Default left position
     width = '200px',    // Default width
     height = '200px',   // Default height
