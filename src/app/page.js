@@ -10,7 +10,7 @@ import BentoGridDemo from '../Components/Bounties/BountiesSection';
 import { ThemeProvider } from '../Components/End/ThemeChangeContext';
 import NavBar3 from '../Components/NavBar/NavBar3';
 import MaskedPage from "@/Components/Home/PortalReveal";
-import Footer from "@/Components/Footer/page";
+import Footer from "@/Components/Footer/Footerpage";
 
 export default function Home() {
   return (
